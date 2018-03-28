@@ -30,11 +30,11 @@
   },
   "keywords": [],
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-app-rewired start",
     "watch": "node scripts/watch.js",
-    "build": "react-scripts build",
+    "build": "react-app-rewired build",
     "lint": "eslint src/**/*.js",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -46,14 +46,18 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-hot-loader": "^4.0.0",
     "react-intl": "^2.4.0",
     "react-scripts": "1.0.17",
+    "react-tap-event-plugin": "^3.0.2",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.77.1"
   },
   "devDependencies": {
+    "babel-plugin-transform-export-extensions": "^6.22.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "enzyme-to-json": "^3.3.0"
+    "enzyme-to-json": "^3.3.0",
+    "react-app-rewired": "^1.5.0"
   }
 }
