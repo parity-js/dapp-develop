@@ -17,7 +17,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { eip20, foundationWallet } from '~/contracts/abi';
+import { eip20, foundationWallet } from '@parity/shared/lib/contracts/abi';
 
 const ABI_TYPES = [
   {

@@ -14,24 +14,25 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-import React, { Component, PropTypes } from 'react';
+import nock from 'nock';
+import { stringify } from 'qs';
 
-import { GasPriceEditor } from '@parity/ui/lib';
+import { url } from './links';
 
-import styles from '../executeContract.css';
+function mockget (requests, test, netVersion) {
+  let scope = nock(url(test, netVersion));
 
-export default class AdvancedStep extends Component {
-  static propTypes = {
-    gasStore: PropTypes.object.isRequired
-  };
+  requests.forEach((request) => {
+    scope = scope
+      .get(`/api?${stringify(request.query)}`)
+      .reply(request.code || 200, () => {
+        return { result: request.reply };
+      });
+  });
 
-  render () {
-    const { gasStore } = this.props;
-
-    return (
-      <div className={ styles.gaseditor }>
-        <GasPriceEditor store={ gasStore } />
-      </div>
-    );
-  }
+  return scope;
 }
+
+export {
+  mockget
+};

@@ -14,24 +14,15 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-import React, { Component, PropTypes } from 'react';
+import { account } from './account';
+import { stats } from './stats';
+import { txLink, addressLink } from './links';
 
-import { GasPriceEditor } from '@parity/ui/lib';
+const etherscan = {
+  account: account,
+  stats: stats,
+  txLink: txLink,
+  addressLink: addressLink
+};
 
-import styles from '../executeContract.css';
-
-export default class AdvancedStep extends Component {
-  static propTypes = {
-    gasStore: PropTypes.object.isRequired
-  };
-
-  render () {
-    const { gasStore } = this.props;
-
-    return (
-      <div className={ styles.gaseditor }>
-        <GasPriceEditor store={ gasStore } />
-      </div>
-    );
-  }
-}
+export default etherscan;

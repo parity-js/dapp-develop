@@ -21,7 +21,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { IdentityIcon, IdentityName, TypedInput } from '@parity/ui/lib';
 import ShortenedHash from '@parity/ui/lib/ShortenedHash';
-import { txLink } from '~/3rdparty/etherscan/links';
+import { txLink } from '~/3rdparty/etherscan/links'; // TODO ~
 
 import styles from '../../contract.css';
 

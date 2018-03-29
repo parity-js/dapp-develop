@@ -18,14 +18,14 @@ import { noop } from 'lodash';
 import { observable, computed, action, transaction } from 'mobx';
 import BigNumber from 'bignumber.js';
 
-import { eip20 as tokenAbi } from '~/contracts/abi';
+import { eip20 as tokenAbi } from '@parity/shared/lib/contracts/abi';
 import { fromWei } from '@parity/api/lib/util/wei';
 import ERRORS from './errors';
 import { DEFAULT_GAS } from '@parity/shared/lib/util/constants';
 import { ETH_TOKEN } from '@parity/shared/lib/util/tokens';
 import { getTxOptions } from '@parity/shared/lib/util/tx';
 import GasPriceStore from '@parity/ui/lib/GasPriceEditor/store';
-import { getLogger, LOG_KEYS } from '~/config';
+import { getLogger, LOG_KEYS } from '@parity/shared/lib/config';
 
 const log = getLogger(LOG_KEYS.TransferModalStore);
 
@@ -121,6 +121,9 @@ export default class TransferStore {
 
       case 1:
         return extrasValid;
+
+      default:
+        return;
     }
   }
 
@@ -165,6 +168,9 @@ export default class TransferStore {
 
       case 'value':
         return this._onUpdateValue(value);
+
+      default:
+        return;
     }
   }
 

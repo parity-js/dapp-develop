@@ -27,7 +27,7 @@ import { hashHistory } from 'react-router';
 
 import Api from '@parity/api';
 
-// import ContractInstances from '~/contracts';
+// import ContractInstances from '@parity/shared/lib/contracts';
 
 import { initStore } from '@parity/shared/lib/redux'; 
 import ContextProvider from '@parity/ui/lib/ContextProvider';

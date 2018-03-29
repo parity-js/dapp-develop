@@ -20,12 +20,12 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 
 import { toWei } from '@parity/api/lib/util/wei';
-import { Button, GasPriceEditor, IdentityIcon, Portal, Warning } from '~/ui';
-import { CancelIcon, NextIcon, PrevIcon } from '~/ui/Icons';
-import { MAX_GAS_ESTIMATION } from '~/util/constants';
-import { validateAddress, validateUint } from '~/util/validation';
-import { parseAbiType } from '~/util/abi';
-import { setSender } from '~/util/tx';
+import { Button, GasPriceEditor, IdentityIcon, Portal, Warning } from '@parity/ui/lib';
+import { CancelIcon, NextIcon, PrevIcon } from '@parity/ui/lib/Icons';
+import { MAX_GAS_ESTIMATION } from '@parity/shared/lib/util/constants';
+import { validateAddress, validateUint } from '@parity/shared/lib/util/validation';
+import { parseAbiType } from '@parity/shared/lib/util/abi';
+import { setSender } from '@parity/shared/lib/util/tx';
 
 import AdvancedStep from './AdvancedStep';
 import DetailsStep from './DetailsStep';

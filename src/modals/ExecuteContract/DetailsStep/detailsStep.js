@@ -18,7 +18,7 @@ import { Checkbox, MenuItem } from 'material-ui';
 import React, { Component, PropTypes } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { AddressSelect, Form, Input, Select, TypedInput } from '~/ui';
+import { AddressSelect, Form, Input, Select, TypedInput } from '@parity/ui/lib';
 
 import styles from '../executeContract.css';
 

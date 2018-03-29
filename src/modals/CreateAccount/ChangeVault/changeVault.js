@@ -14,24 +14,38 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
+import { observer } from 'mobx-react';
 import React, { Component, PropTypes } from 'react';
 
-import { GasPriceEditor } from '@parity/ui/lib';
+import { VaultSelect } from '@parity/ui/lib';
 
-import styles from '../executeContract.css';
-
-export default class AdvancedStep extends Component {
+@observer
+export default class ChangeVault extends Component {
   static propTypes = {
-    gasStore: PropTypes.object.isRequired
-  };
+    createStore: PropTypes.object.isRequired,
+    vaultStore: PropTypes.object
+  }
 
   render () {
-    const { gasStore } = this.props;
+    const { createStore, vaultStore } = this.props;
+    const { vaultName } = createStore;
+
+    if (!vaultStore || vaultStore.vaultsOpened.length === 0) {
+      return null;
+    }
 
     return (
-      <div className={ styles.gaseditor }>
-        <GasPriceEditor store={ gasStore } />
-      </div>
+      <VaultSelect
+        onSelect={ this.onSelect }
+        value={ vaultName }
+        vaultStore={ vaultStore }
+      />
     );
+  }
+
+  onSelect = (vaultName) => {
+    const { createStore } = this.props;
+
+    createStore.setVaultName(vaultName);
   }
 }

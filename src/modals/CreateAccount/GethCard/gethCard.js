@@ -16,22 +16,29 @@
 
 import React, { Component, PropTypes } from 'react';
 
-import { GasPriceEditor } from '@parity/ui/lib';
+import { AccountCard } from '@parity/ui/lib';
+import { ETH_TOKEN } from '@parity/shared/lib/util/tokens';
 
-import styles from '../executeContract.css';
-
-export default class AdvancedStep extends Component {
+export default class GethCard extends Component {
   static propTypes = {
-    gasStore: PropTypes.object.isRequired
-  };
+    address: PropTypes.string.isRequired,
+    balance: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+  }
 
   render () {
-    const { gasStore } = this.props;
+    const { address, balance, name } = this.props;
 
     return (
-      <div className={ styles.gaseditor }>
-        <GasPriceEditor store={ gasStore } />
-      </div>
+      <AccountCard
+        account={ {
+          address,
+          name
+        } }
+        balance={ {
+          [ETH_TOKEN.id]: balance
+        } }
+      />
     );
   }
 }

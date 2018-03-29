@@ -14,24 +14,38 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-import React, { Component, PropTypes } from 'react';
+import { shallow } from 'enzyme';
+import React from 'react';
 
-import { GasPriceEditor } from '@parity/ui/lib';
+import { ACCOUNTS, createApi, createRedux } from './createAccount.test.js';
 
-import styles from '../executeContract.css';
+import CreateAccount from './';
 
-export default class AdvancedStep extends Component {
-  static propTypes = {
-    gasStore: PropTypes.object.isRequired
-  };
+let api;
+let component;
 
-  render () {
-    const { gasStore } = this.props;
+function render () {
+  api = createApi();
+  component = shallow(
+    <CreateAccount
+      accounts={ ACCOUNTS }
+    />,
+    {
+      context: {
+        store: createRedux()
+      }
+    }
+  ).find('CreateAccount').shallow({
+    context: { api }
+  });
 
-    return (
-      <div className={ styles.gaseditor }>
-        <GasPriceEditor store={ gasStore } />
-      </div>
-    );
-  }
+  return component;
 }
+
+describe('modals/CreateAccount', () => {
+  describe('rendering', () => {
+    it('renders with defaults', () => {
+      expect(render()).to.be.ok;
+    });
+  });
+});
