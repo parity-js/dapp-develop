@@ -14,4 +14,18 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-export default from './contract';
+import { ADDRESS, createRedux } from '../account.test.js';
+
+function createApi () {
+  return {
+    trace: {
+      filter: (options) => Promise.resolve([{ transactionHash: options.fromAddress ? '123' : '098', action: {} }])
+    }
+  };
+}
+
+export {
+  ADDRESS,
+  createApi,
+  createRedux
+};

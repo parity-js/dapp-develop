@@ -29,13 +29,13 @@ import Api from '@parity/api';
 
 // import ContractInstances from '~/contracts';
 
-// import { initStore } from './redux';
+import { initStore } from '@parity/shared/lib/redux'; 
 import ContextProvider from '@parity/ui/lib/ContextProvider';
 // import muiTheme from '@parity/ui/lib/Theme';
 import MainApplication from './main';
 
-// import { loadSender, patchApi } from '~/util/tx';
-// import { setApi } from '~/redux/providers/apiActions';
+import { loadSender, patchApi } from '@parity/shared/lib/util/tx';
+import { setApi } from '@parity/shared/lib/redux/providers/apiActions';
 
 // import './environment';
 
@@ -51,21 +51,20 @@ injectTapEventPlugin();
 
 const api = new Api(window.ethereum);
 
-// patchApi(api); @TODO
-// loadSender(api);
-// ContractInstances.create(api);
+patchApi(api); // @TODO Not sure what those are for
+loadSender(api);
+// ContractInstances.create(api); // @TODO
 
-// const store = initStore(api, hashHistory);
-// store.dispatch({ type: 'initAll', api });
-// store.dispatch(setApi(api));
+const store = initStore(api, hashHistory);
+store.dispatch({ type: 'initAll', api });
+store.dispatch(setApi(api));
 
-// store={ store }
 // muiTheme={ muiTheme }
 // muiTheme={ muiTheme }
 
 ReactDOM.render(
   <AppContainer>
-    <ContextProvider api={ api } >
+    <ContextProvider api={ api } store = {store }>
       <MainApplication
         routerHistory={ hashHistory }
       />
@@ -80,7 +79,7 @@ if (module.hot) {
 // store={ store }
     ReactDOM.render(
       <AppContainer>
-        <ContextProvider api={ api } >
+        <ContextProvider api={ api } store = {store }>
           <MainApplication
             routerHistory={ hashHistory }
           />

@@ -14,4 +14,45 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-export default from './contract';
+import sinon from 'sinon';
+
+const ADDRESS = '0x0123456789012345678901234567890123456789';
+const ACCOUNTS = {
+  [ADDRESS]: {
+    address: ADDRESS
+  }
+};
+
+function createRedux () {
+  return {
+    dispatch: sinon.stub(),
+    subscribe: sinon.stub(),
+    getState: () => {
+      return {
+        balances: {
+          balances: {
+            [ADDRESS]: {}
+          }
+        },
+        images: {},
+        nodeStatus: {
+          netVersion: '1',
+          traceMode: false
+        },
+        personal: {
+          accounts: {
+            [ADDRESS]: {
+              address: ADDRESS
+            }
+          }
+        }
+      };
+    }
+  };
+}
+
+export {
+  ACCOUNTS,
+  ADDRESS,
+  createRedux
+};

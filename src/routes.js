@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-// import HistoryStore from '~/mobx/historyStore';
+// import HistoryStore from '@parity/shared/lib/mobx/historyStore';
 /// import { Accounts, Account, Addresses, Address, Application, Contract, Contracts, Home, Settings, SettingsBackground, SettingsParity, SettingsProxy, SettingsViews, Status, Vaults, Wallet, Web, WriteContract } from '~/views';
 import { Contract, Contracts, WriteContract } from './views'; // todo ~/views
 // import builtinDapps from '~/views/Dapps/builtin.json';
