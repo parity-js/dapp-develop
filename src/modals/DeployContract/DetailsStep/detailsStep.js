@@ -18,9 +18,9 @@ import PropTypes from 'prop-types';
 
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Checkbox, MenuItem } from 'material-ui';
+import { MenuItem } from 'material-ui'; // TODO VIRER
 
-import { AddressSelect, Form, Input, Select } from '@parity/ui/lib';
+import { AddressSelect, Form, Input, Select, Checkbox, Dropdown } from '@parity/ui/lib';
 import { validateAbi } from '@parity/shared/lib/util/validation';
 import { parseAbiType } from '@parity/shared/lib/util/abi';
 
@@ -209,7 +209,7 @@ export default class DetailsStep extends Component {
                 defaultMessage='advanced sending options'
               />
             }
-            onCheck={ this.onCheckExtras }
+            onClick={ this.onCheckExtras }
             style={ CHECK_STYLE }
           />
         </div>
@@ -273,17 +273,12 @@ export default class DetailsStep extends Component {
     const contractsItems = Object
       .keys(contracts)
       .map((name, index) => (
-        <MenuItem
-          key={ index }
-          label={ name }
-          value={ index }
-        >
-          { name }
-        </MenuItem>
+        {text: name, value: index}
       ));
 
     return (
-      <Select
+      <Dropdown 
+        options={contractsItems}
         label={
           <FormattedMessage
             id='deployContract.details.contract.label'
@@ -292,9 +287,7 @@ export default class DetailsStep extends Component {
         }
         onChange={ this.onContractChange }
         value={ selectedContractIndex }
-      >
-        { contractsItems }
-      </Select>
+      />
     );
   }
 

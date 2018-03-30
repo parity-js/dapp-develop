@@ -44,8 +44,6 @@ class AddContract extends Component {
   render () {
     const { step } = this.store;
 
-    console.log('xyz :: addContract :: render(this.context.api,this.props.contracts',this.context.api,this.props.contracts);
-
     return (
       <Portal
         activeStep={ step }
@@ -84,8 +82,6 @@ class AddContract extends Component {
 
   renderContractTypeSelector () {
     const { abiTypeIndex, abiTypes } = this.store;
-
-    console.log('xyz :: addContract :: renderSelector(index,types)',abiTypeIndex,abiTypes)
 
     return (
       <RadioButtons
@@ -247,7 +243,6 @@ class AddContract extends Component {
   }
 
   onChangeABIType = (value, index) => {
-    console.log('xyz :: addContract :: onChangeABIType(value,index)',value,index)
     this.store.setAbiTypeIndex(index);
   }
 

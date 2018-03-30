@@ -100,14 +100,6 @@ class Contracts extends Component {
     const { contracts, hasContracts } = this.props;
     const { searchValues, sortOrder } = this.state;
 
-    // @TODO
-    // => okay this is one pane; other pane is develop. need to set a way to navigate.
-    // à terme: trois tabs: 1) contracts [+watch, search, sort ;;; contract information], 2) deploy, 3) develop [new, load, save, export, import; compile];
-    // demander confirmation UX amaury
-    // deploy via develop
-    // :: reprendre le modèle ui de browsedapps (après confirmation amaury que c'est 
-    // un bon modèle pour l'ui)
-
     return (
       <div>
         { this.renderActionbar() }
@@ -161,18 +153,18 @@ class Contracts extends Component {
     const buttons = [
       <Button
         key='addContract'
-        icon={ <AddIcon /> }
+        icon='add'
         label={
           <FormattedMessage
             id='contracts.buttons.watch'
-            defaultMessage='watch'
+            defaultMessage='add'
           />
         }
         onClick={ this.onAddContract }
       />,
       <Button
         key='deployContract'
-        icon={ <AddIcon /> }
+        icon='send'
         label={
           <FormattedMessage
             id='contracts.buttons.deploy'
@@ -186,7 +178,7 @@ class Contracts extends Component {
         key='writeContract'
       >
         <Button
-          icon={ <DevelopIcon /> }
+          icon='pencil'
           label={
             <FormattedMessage
               id='contracts.buttons.develop'
