@@ -67,7 +67,9 @@ export default class Store {
   }
 
   @action setAbiTypeIndex = (abiTypeIndex) => {
+    console.log('xyz :: store :: setAbiTypeIndex(index)',abiTypeIndex)
     transaction(() => {
+      console.log('xyz :: store :: setAbiTypeIndex :: transaction (index)',abiTypeIndex)
       this.abiTypeIndex = abiTypeIndex;
       this.setAbi(this.abiTypes[abiTypeIndex].value);
     });
