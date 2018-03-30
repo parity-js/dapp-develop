@@ -1,3 +1,5 @@
+import { pick } from 'lodash';
+
 // Copyright 2015-2017 Parity Technologies (UK) Ltd.
 // This file is part of Parity.
 
@@ -16,8 +18,9 @@
 
 // @TODO Share component ?
 
-import { pick } from 'lodash';
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { Container, SectionList } from '@parity/ui/lib';

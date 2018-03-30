@@ -1,3 +1,5 @@
+import { Checkbox } from 'material-ui';
+
 // Copyright 2015-2017 Parity Technologies (UK) Ltd.
 // This file is part of Parity.
 
@@ -14,8 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-import { Checkbox } from 'material-ui';
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import Form, { Input, InputAddressSelect, AddressSelect } from '@parity/ui/lib/Form';
