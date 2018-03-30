@@ -28,7 +28,7 @@ const routes = [
     indexRoute: { component: Contracts },
     childRoutes: [
         { path: 'develop', component: WriteContract },
-        { path: ':address', component: Contract }
+        { path: 'contracts/:address', component: Contract }
     ]
   }
 ];

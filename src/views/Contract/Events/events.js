@@ -61,7 +61,7 @@ export default class Events extends Component {
       return (
         <Container title={ TITLE }>
           <div>
-            <Loading size={ 2 } />
+            <Loading />
           </div>
         </Container>
       );
@@ -73,7 +73,7 @@ export default class Events extends Component {
           <p>
             <FormattedMessage
               id='contract.events.noEvents'
-              defaultMessage='No events has been sent from this contract.'
+              defaultMessage='No events have been sent from this contract.'
             />
           </p>
         </Container>

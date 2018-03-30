@@ -18,7 +18,7 @@ import PropTypes from 'prop-types';
 
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Card, CardTitle, CardText } from 'material-ui/Card';
+import { Card } from 'semantic-ui-react';
 
 import InputQuery from './inputQuery';
 import { Container, TypedInput } from '@parity/ui/lib';
@@ -124,18 +124,17 @@ export default class Queries extends Component {
     return (
       <div className={ styles.container } key={ fn.signature }>
         <Card className={ styles.method }>
-          <CardTitle
-            className={ styles.methodTitle }
-            title={ fn.name }
-          />
-          <CardText
+          <Card.Header className={ styles.methodTitle }>
+            { fn.name }
+          </Card.Header>
+          <Card.Content
             className={ styles.methodContent }
           >
             {
               abi.outputs
                 .map((output, index) => this.renderValue(values[index], output, index))
             }
-          </CardText>
+          </Card.Content>
         </Card>
       </div>
     );

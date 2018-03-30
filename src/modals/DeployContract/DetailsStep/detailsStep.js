@@ -18,7 +18,6 @@ import PropTypes from 'prop-types';
 
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { MenuItem } from 'material-ui'; // TODO VIRER
 
 import { AddressSelect, Form, Input, Select, Checkbox, Dropdown } from '@parity/ui/lib';
 import { validateAbi } from '@parity/shared/lib/util/validation';

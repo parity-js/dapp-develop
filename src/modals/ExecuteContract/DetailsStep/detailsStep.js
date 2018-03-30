@@ -1,5 +1,3 @@
-import { Checkbox, MenuItem } from 'material-ui';
-
 // Copyright 2015-2017 Parity Technologies (UK) Ltd.
 // This file is part of Parity.
 
@@ -21,7 +19,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { AddressSelect, Form, Input, Select, TypedInput } from '@parity/ui/lib';
+import { AddressSelect, Form, Input, TypedInput, Checkbox, Dropdown } from '@parity/ui/lib';
 
 import styles from '../executeContract.css';
 
@@ -106,7 +104,7 @@ export default class DetailsStep extends Component {
                   defaultMessage='advanced sending options'
                 />
               }
-              onCheck={ onAdvancedClick }
+              onClick={ onAdvancedClick }
               style={ CHECK_STYLE }
             />
           </div>
@@ -126,38 +124,32 @@ export default class DetailsStep extends Component {
       .filter((func) => !func.constant)
       .sort((a, b) => (a.name || '').localeCompare(b.name || ''))
       .map((func) => {
-        const params = (func.abi.inputs || [])
-          .map((input, index) => {
-            return (
-              <span key={ input.name }>
-                <span>{ index ? ', ' : '' }</span>
-                <span className={ styles.paramname }>{ input.name }: </span>
-                <span>{ input.type }</span>
-              </span>
-            );
-          });
-        const name = (
-          <div>
-            <span>{ func.name }</span>
-            <span className={ styles.paramname }>(</span>
-            { params }
-            <span className={ styles.paramname }>)</span>
-          </div>
-        );
+        // const params = (func.abi.inputs || [])
+        //   .map((input, index) => {
+        //     return (
+        //       <span key={ input.name }>
+        //         <span>{ index ? ', ' : '' }</span>
+        //         <span className={ styles.paramname }>{ input.name }: </span>
+        //         <span>{ input.type }</span>
+        //       </span>
+        //     );
+        //   });
 
-        return (
-          <MenuItem
-            key={ func.signature }
-            value={ func.signature }
-            label={ func.name || '()' }
-          >
-            { name }
-          </MenuItem>
-        );
+        // const name = (
+        //   <div>
+        //     <span>{ func.name }</span>
+        //     <span className={ styles.paramname }>(</span>
+        //     { params }
+        //     <span className={ styles.paramname }>)</span>
+        //   </div>
+        // );
+
+        // (previously func.name as label, name as content)
+        return {text: func.name || '()', value: func.signature}
       });
 
     return (
-      <Select
+      <Dropdown
         error={ funcError }
         hint={
           <FormattedMessage
@@ -171,11 +163,10 @@ export default class DetailsStep extends Component {
             defaultMessage='function to execute'
           />
         }
+        options={ functions }
         onChange={ this.onFuncChange }
         value={ func.signature }
-      >
-        { functions }
-      </Select>
+      />
     );
   }
 
@@ -209,7 +200,7 @@ export default class DetailsStep extends Component {
     });
   }
 
-  onFuncChange = (event, index, signature) => {
+  onFuncChange = (event, signature) => {
     const { contract, onFuncChange } = this.props;
 
     onFuncChange(event, contract.functions.find((fn) => fn.signature === signature));
