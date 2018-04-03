@@ -16,7 +16,8 @@
 
 // import HistoryStore from '@parity/shared/lib/mobx/historyStore';
 /// import { Accounts, Account, Addresses, Address, Application, Contract, Contracts, Home, Settings, SettingsBackground, SettingsParity, SettingsProxy, SettingsViews, Status, Vaults, Wallet, Web, WriteContract } from '~/views';
-import { Contract, Contracts, WriteContract } from './views'; // todo ~/views
+import { Contract, Contracts, WriteContract } from '~/views';
+import App from '~/app';
 // import builtinDapps from '~/views/Dapps/builtin.json';
 
 // const accountsHistory = HistoryStore.get('accounts');
@@ -25,6 +26,7 @@ import { Contract, Contracts, WriteContract } from './views'; // todo ~/views
 const routes = [
   {
     path: '/',
+    component: App,
     indexRoute: { component: Contracts },
     childRoutes: [
         { path: 'develop', component: WriteContract },
