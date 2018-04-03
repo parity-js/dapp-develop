@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import LinearProgress from 'material-ui/LinearProgress';
-import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card';
+import { Card } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -83,11 +83,13 @@ class InputQuery extends Component {
 
     return (
       <Card className={ className }>
-        <CardTitle
-          className={ styles.methodTitle }
-          title={ name }
-        />
-        { this.renderContent() }
+        <Card.Header
+          className={ styles.methodTitle }>
+          { name }
+        </Card.Header>
+        <Card.Content>
+          { this.renderContent() }
+        </Card.Content>
       </Card>
     );
   }
@@ -100,14 +102,14 @@ class InputQuery extends Component {
       .map((input, index) => this.renderInput(input, index));
 
     return (
-      <div>
-        <CardText className={ styles.methodContent }>
+      <Card>
+        <Card.Header className={ styles.methodContent }>
           <div className={ styles.methodResults }>
             { this.renderResults() }
           </div>
           { inputsFields }
-        </CardText>
-        <CardActions>
+        </Card.Header>
+        <Card.Content>
           <Button
             label={
               <FormattedMessage
@@ -118,8 +120,8 @@ class InputQuery extends Component {
             disabled={ !isValid }
             onClick={ this.onClick }
           />
-        </CardActions>
-      </div>
+        </Card.Content>
+      </Card>
     );
   }
 

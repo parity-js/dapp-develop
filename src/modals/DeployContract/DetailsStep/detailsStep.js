@@ -19,7 +19,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { AddressSelect, Form, Input, Select, Checkbox, Dropdown } from '@parity/ui/lib';
+import { AddressSelect, Form, Input, Checkbox, Dropdown } from '@parity/ui/lib';
 import { validateAbi } from '@parity/shared/lib/util/validation';
 import { parseAbiType } from '@parity/shared/lib/util/abi';
 

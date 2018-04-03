@@ -40,7 +40,8 @@ import styles from './contract.css';
 
 class Contract extends Component {
   static contextTypes = {
-    api: PropTypes.object.isRequired
+    api: PropTypes.object.isRequired,
+    router: PropTypes.object.isRequired
   };
 
   static propTypes = {
@@ -324,7 +325,7 @@ class Contract extends Component {
       <Delete
         account={ account }
         visible={ showDeleteDialog }
-        route='/contracts'
+        onConfirm={ this.onDeleteDialogConfirm }
         onClose={ this.closeDeleteDialog }
       />
     );
@@ -405,6 +406,10 @@ class Contract extends Component {
 
   closeDeleteDialog = () => {
     this.setState({ showDeleteDialog: false });
+  }
+
+  onDeleteDialogConfirm = () => {
+    this.context.router.push('/');
   }
 
   showDeleteDialog = () => {

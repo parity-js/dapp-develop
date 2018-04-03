@@ -29,17 +29,15 @@ import styles from '../address.css';
 class Delete extends Component {
   static contextTypes = {
     api: PropTypes.object.isRequired,
-    router: PropTypes.object
   };
 
   static propTypes = {
-    route: PropTypes.string.isRequired,
-
     address: PropTypes.string,
     account: PropTypes.object,
     confirmMessage: PropTypes.node,
     visible: PropTypes.bool,
     onClose: PropTypes.func,
+    onConfirm: PropTypes.func,
     newError: PropTypes.func
   };
 
@@ -104,16 +102,15 @@ class Delete extends Component {
   }
 
   onDeleteConfirmed = () => {
-    const { api, router } = this.context;
-    const { account, route, newError } = this.props;
+    const { api } = this.context;
+    const { account, newError, onConfirm } = this.props;
 
     this.setState({ isBusy: true });
 
     api.parity
       .removeAddress(account.address)
       .then(() => {
-        router.push(route);
-        this.closeDeleteDialog();
+        onConfirm();
       })
       .catch((error) => {
         console.error('onDeleteConfirmed', error);
