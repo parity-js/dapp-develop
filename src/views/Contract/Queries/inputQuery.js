@@ -20,8 +20,7 @@ import PropTypes from 'prop-types';
 
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
-import LinearProgress from 'material-ui/LinearProgress';
-import { Card } from 'semantic-ui-react';
+import { Card, Loader } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -131,7 +130,7 @@ class InputQuery extends Component {
 
     if (isLoading) {
       return (
-        <LinearProgress mode='indeterminate' />
+        <Loader active />
       );
     }
 

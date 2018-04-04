@@ -23,7 +23,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { uniq, isEqual } from 'lodash';
 
-import { AddContract, DeployContract } from '../../modals'; // TODO ~/
+import { AddContract, DeployContract } from '~/modals';
 import { setVisibleAccounts } from '@parity/shared/lib/redux/providers/personalActions';
 import { Actionbar, ActionbarSearch, ActionbarSort, Button, Page } from '@parity/ui/lib';
 import { AddIcon, DevelopIcon } from '@parity/ui/lib/Icons';
