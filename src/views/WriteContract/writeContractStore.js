@@ -179,7 +179,7 @@ export default class WriteContractStore {
     this.reloadContracts(-1, sourcecode);
   }
 
-  @action handleSelectBuild = (_, index, value) => {
+  @action handleSelectBuild = (_, value) => {
     this.selectedBuild = value;
     return this
       .loadSolidityVersion(this.builds[value])

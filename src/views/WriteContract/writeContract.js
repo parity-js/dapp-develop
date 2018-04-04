@@ -18,13 +18,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { observer } from 'mobx-react';
-import { MenuItem, Toggle } from 'material-ui';
 import { connect } from 'react-redux';
 import { Loader } from 'semantic-ui-react';
 import moment from 'moment';
 import { throttle } from 'lodash';
 
-import { Actionbar, ActionbarExport, ActionbarImport, Button, Page, Dropdown, Input } from '@parity/ui/lib';
+import { Actionbar, ActionbarExport, ActionbarImport, Button, Page, Dropdown, Input, Toggle } from '@parity/ui/lib';
 import { CancelIcon, ListIcon, SaveIcon, SendIcon, SettingsIcon } from '@parity/ui/lib/Icons';
 import Editor from '@parity/ui/lib/Editor';
 import { DeployContract, SaveContract, LoadContract } from '~/modals';
@@ -374,7 +373,6 @@ class WriteContract extends Component {
                   defaultMessage='Optimise'
                 />
               }
-              labelPosition='right'
               onToggle={ this.store.handleOptimizeToggle }
               toggled={ this.store.optimize }
             />
@@ -387,7 +385,6 @@ class WriteContract extends Component {
                   defaultMessage='Auto-Compile'
                 />
               }
-              labelPosition='right'
               onToggle={ this.store.handleAutocompileToggle }
               toggled={ this.store.autocompile }
             />
@@ -404,11 +401,11 @@ class WriteContract extends Component {
 
     const buildsList = builds.map((build, index) => (
       {text:
-        build.release
+        (build.release
         ? <span className={ styles.big }>
             { build.version }
           </span>
-        : build.longVersion,
+        : build.longVersion),
       value: index}
     ));
 
