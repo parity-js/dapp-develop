@@ -14,4 +14,21 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-export default from './writeContract';
+export default class SignatureReg {
+  constructor (api, registry) {
+    this._api = api;
+    this._registry = registry;
+
+    this.getInstance();
+  }
+
+  getInstance () {
+    return this._registry.getContractInstance('signaturereg');
+  }
+
+  lookup (signature) {
+    return this.getInstance().then((instance) => {
+      return instance.entries.call({}, [signature]);
+    });
+  }
+}

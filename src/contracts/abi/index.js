@@ -14,4 +14,18 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-export default from './writeContract';
+export badgereg from './badgereg.json';
+export basiccoin from './basiccoin.json';
+export basiccoinmanager from './basiccoinmanager.json';
+export dappreg from './dappreg.json';
+export eip20 from './eip20.json';
+export emailverification from './email-verification.json';
+export gavcoin from './gavcoin.json';
+export githubhint from './githubhint.json';
+export owned from './owned.json';
+export registry from './registry.json';
+export registry2 from './registry2.json';
+export signaturereg from './signaturereg.json';
+export smsverification from './sms-verification.json';
+export tokenreg from './tokenreg.json';
+export foundationWallet from './foundation-multisig-wallet.json';

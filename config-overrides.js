@@ -5,6 +5,7 @@ const path = require('path');
 
 function overrideEslintOptions(options) {
   options.rules = {"react/no-deprecated": 0} // @TODO TEMPORARY, to silence proptypes warnings
+  options.rules["import/no-webpack-loader-syntax"] = 0; // For the raw imports in WriteContractStore
   return options;
 }
 

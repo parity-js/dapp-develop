@@ -14,4 +14,31 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-export default from './writeContract';
+export default class TokenReg {
+  constructor (api, registry) {
+    this._api = api;
+    this._registry = registry;
+
+    this.getInstance();
+  }
+
+  getContract () {
+    return this._registry.getContract('tokenreg');
+  }
+
+  getInstance () {
+    return this.getContract().then((contract) => contract.instance);
+  }
+
+  tokenCount () {
+    return this.getInstance().then((instance) => {
+      return instance.tokenCount.call();
+    });
+  }
+
+  token (index) {
+    return this.getInstance().then((instance) => {
+      return instance.token.call({}, [index]);
+    });
+  }
+}
