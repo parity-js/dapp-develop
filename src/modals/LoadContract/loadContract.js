@@ -82,7 +82,7 @@ export default class LoadContract extends Component {
     );
   }
 
-  renderBody() {
+  renderBody () {
     if (this.state.deleteRequest) {
       return this.renderConfirmRemoval();
     }
@@ -91,14 +91,15 @@ export default class LoadContract extends Component {
 
     const tabs = [
       {
-        label: <FormattedMessage
-          id='loadContract.tab.snippets'
-          defaultMessage='Snippets'
-        />,
-        content:
-          <React.Fragment key="snippets">
+        label: (
+          <FormattedMessage
+            id='loadContract.tab.snippets'
+            defaultMessage='Snippets'
+          />),
+        content: (
+          <React.Fragment key='snippets'>
             {this.renderEditor()}
-            <SelectableList onChange={this.onClickContract}>
+            <SelectableList onChange={ this.onClickContract }>
               <Subheader>
                 <FormattedMessage
                   id='loadContract.header.snippets'
@@ -107,39 +108,38 @@ export default class LoadContract extends Component {
               </Subheader>
               {this.renderContracts(snippets, false)}
             </SelectableList>
-          </React.Fragment>
+          </React.Fragment>)
       }
     ]; // @TODO selectablelist
 
     if (Object.keys(contracts).length !== 0) {
       tabs.push({
         label:
-          <FormattedMessage
-            id='loadContract.tab.local'
-            defaultMessage='Local'
-          />,
+  <FormattedMessage
+    id='loadContract.tab.local'
+    defaultMessage='Local'
+  />,
         content:
-          <React.Fragment key="local">
-            {this.renderEditor()}
-            <SelectableList onChange={this.onClickContract}>
-              <Subheader>
-                <FormattedMessage
-                  id='loadContract.header.saved'
-                  defaultMessage='Saved Contracts'
-                />
-              </Subheader>
-              {this.renderContracts(contracts)}
-            </SelectableList>
-          </React.Fragment>
-      })
+  <React.Fragment key='local'>
+    {this.renderEditor()}
+    <SelectableList onChange={ this.onClickContract }>
+      <Subheader>
+        <FormattedMessage
+          id='loadContract.header.saved'
+          defaultMessage='Saved Contracts'
+        />
+      </Subheader>
+      {this.renderContracts(contracts)}
+    </SelectableList>
+  </React.Fragment>
+      });
     }
 
-
     return (
-      <div className={styles.loadContainer}>
-      <Tabs onChange={this.handleChangeTab} tabs={tabs.map(t => t.label)} />
-      
-      {tabs.filter((_, i) => i === this.state.activeTab).map(t => t.content)}
+      <div className={ styles.loadContainer }>
+        <Tabs onChange={ this.handleChangeTab } tabs={ tabs.map(t => t.label) } />
+
+        {tabs.filter((_, i) => i === this.state.activeTab).map(t => t.content)}
 
       </div>
     );
@@ -282,7 +282,7 @@ export default class LoadContract extends Component {
 
     return [
       <Button
-        key="cancel"
+        key='cancel'
         icon={ <CancelIcon /> }
         label={
           <FormattedMessage
@@ -293,7 +293,7 @@ export default class LoadContract extends Component {
         onClick={ this.onClose }
       />,
       <Button
-        key="load"
+        key='load'
         disabled={ this.state.selected === -1 }
         icon={ <CheckIcon /> }
         label={
