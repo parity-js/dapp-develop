@@ -14,20 +14,18 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-import { Subheader, IconButton } from 'material-ui';
-import { List, ListItem, makeSelectable } from 'material-ui/List';
+import { IconButton } from 'material-ui';
 import moment from 'moment';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import { Button, Portal, Tabs } from '@parity/ui/lib';
+import { Button, Portal, Tabs, SelectionList } from '@parity/ui/lib';
 import Editor from '@parity/ui/lib/Editor';
 import { CancelIcon, CheckIcon, DeleteIcon } from '@parity/ui/lib/Icons';
+import ListItem from '@parity/ui/lib/List/Item';
 
 import styles from './loadContract.css';
-
-const SelectableList = makeSelectable(List);
 
 const REMOVAL_STYLE = {
   backgroundColor: 'none',
@@ -99,39 +97,31 @@ export default class LoadContract extends Component {
         content: (
           <React.Fragment key='snippets'>
             {this.renderEditor()}
-            <SelectableList onChange={ this.onClickContract }>
-              <Subheader>
-                <FormattedMessage
-                  id='loadContract.header.snippets'
-                  defaultMessage='Contract Snippets'
-                />
-              </Subheader>
-              {this.renderContracts(snippets, false)}
-            </SelectableList>
+            <FormattedMessage
+              id='loadContract.header.snippets'
+              defaultMessage='Contract Snippets'
+            />
+            <SelectionList onSelectClick={ this.onClickContract } items={ Object.values(snippets) } renderItem={ item => this.renderContract(item, false) } />
           </React.Fragment>)
       }
-    ]; // @TODO selectablelist
+    ];
 
     if (Object.keys(contracts).length !== 0) {
       tabs.push({
-        label:
-  <FormattedMessage
-    id='loadContract.tab.local'
-    defaultMessage='Local'
-  />,
-        content:
-  <React.Fragment key='local'>
-    {this.renderEditor()}
-    <SelectableList onChange={ this.onClickContract }>
-      <Subheader>
-        <FormattedMessage
-          id='loadContract.header.saved'
-          defaultMessage='Saved Contracts'
-        />
-      </Subheader>
-      {this.renderContracts(contracts)}
-    </SelectableList>
-  </React.Fragment>
+        label: (
+          <FormattedMessage
+            id='loadContract.tab.local'
+            defaultMessage='Local'
+          />),
+        content: (
+          <React.Fragment key='local'>
+            {this.renderEditor()}
+            <FormattedMessage
+              id='loadContract.header.saved'
+              defaultMessage='Saved Contracts'
+            />
+            <SelectionList onChange={ this.onClickContract } items={ Object.values(snippets) } renderItem={ item => this.renderContract(item) } />
+          </React.Fragment>)
       });
     }
 
@@ -158,8 +148,8 @@ export default class LoadContract extends Component {
           />
         </p>
         <ListItem
-          primaryText={ name }
-          secondaryText={
+          label={ name }
+          description={
             <FormattedMessage
               id='loadContract.removal.savedAt'
               defaultMessage='Saved {when}'
@@ -206,48 +196,43 @@ export default class LoadContract extends Component {
     );
   }
 
-  renderContracts (contracts, removable = true) {
+  renderContract (contract, removable = true) {
     const { selected } = this.state;
 
-    return Object
-      .values(contracts)
-      .map((contract) => {
-        const { id, name, timestamp, description } = contract;
-        const onDelete = () => this.onDeleteRequest(id);
+    const { id, name, timestamp, description } = contract;
+    const onDelete = () => this.onDeleteRequest(id);
 
-        return (
-          <ListItem
-            key={ id }
-            primaryText={ name }
-            rightIconButton={
-              removable
-                ? (
-                  <IconButton onTouchTap={ onDelete }>
-                    <DeleteIcon />
-                  </IconButton>
-                )
-                : null
-            }
-            secondaryText={
-              description || (
-                <FormattedMessage
-                  id='loadContract.contract.savedAt'
-                  defaultMessage='Saved {when}'
-                  values={ {
-                    when: moment(timestamp).fromNow()
-                  } }
-                />
-              )
-            }
-            style={
-              selected === id
-                ? SELECTED_STYLE
-                : null
-            }
-            value={ id }
-          />
-        );
-      });
+    return (
+      <ListItem
+        key={ id }
+        label={ name }
+        icon={
+          removable
+            ? (
+              <IconButton onTouchTap={ onDelete }>
+                <DeleteIcon />
+              </IconButton>
+            )
+            : null
+        }
+        description={
+          description || (
+            <FormattedMessage
+              id='loadContract.contract.savedAt'
+              defaultMessage='Saved {when}'
+              values={ {
+                when: moment(timestamp).fromNow()
+              } }
+            />
+          )
+        }
+        style={
+          selected === id
+            ? SELECTED_STYLE
+            : null
+        }
+      />
+    );
   }
 
   renderDialogActions () {
@@ -311,8 +296,8 @@ export default class LoadContract extends Component {
     this.setState({ selected: -1, activeTab: i });
   }
 
-  onClickContract = (event, selected) => {
-    this.setState({ selected });
+  onClickContract = (contract) => {
+    this.setState({ selected: contract.id });
   }
 
   onClose = () => {
