@@ -2,6 +2,7 @@ const rewireMobX = require('react-app-rewire-mobx');
 const {injectBabelPlugin} = require('react-app-rewired');
 const rewireEslint = require('react-app-rewire-eslint');
 const path = require('path');
+const rewireCssModules = require('react-app-rewire-css-modules');
 
 function overrideEslintOptions(options) {
   options.rules = {"react/no-deprecated": 0} // @TODO TEMPORARY, to silence proptypes warnings
@@ -20,6 +21,8 @@ module.exports = function override(config, env) {
       }
   };
   config = rewireEslint(config, env, overrideEslintOptions);
+  config = rewireCssModules(config, env);
+  console.log(JSON.stringify(config,null,2));
   
   return config;
 }

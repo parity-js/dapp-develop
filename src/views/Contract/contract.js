@@ -36,7 +36,7 @@ import Delete from '../Address/Delete';
 import Events from './Events';
 import Queries from './Queries';
 
-import styles from './contract.css';
+import styles from './contract.module.scss';
 
 class Contract extends Component {
   static contextTypes = {
@@ -177,8 +177,11 @@ class Contract extends Component {
 
     const formattedBlockNumber = (new BigNumber(blockNumber)).toFormat();
 
+  console.log("STYLES", styles);
+
     return (
       <div className={ styles.blockNumber }>
+      ayayay @TODO
         <FormattedMessage
           id='contract.minedBlock'
           defaultMessage='Mined at block #{blockNumber}'
