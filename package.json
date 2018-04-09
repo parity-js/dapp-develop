@@ -57,6 +57,7 @@
     "react": "^16.1.1",
     "react-app-rewire-eslint": "^0.2.3",
     "react-app-rewire-mobx": "^1.0.8",
+    "react-app-rewire-parity": "^0.10.0",
     "react-dom": "^16.1.1",
     "react-hot-loader": "^4.0.0",
     "react-intl": "^2.4.0",

@@ -36,7 +36,7 @@ import Delete from '../Address/Delete';
 import Events from './Events';
 import Queries from './Queries';
 
-import styles from './contract.module.scss';
+import styles from './contract.css';
 
 class Contract extends Component {
   static contextTypes = {
