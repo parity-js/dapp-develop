@@ -262,6 +262,8 @@ class Contract extends Component {
       <Button
         key='execute'
         icon={ <PlayIcon /> }
+        basic
+        secondary
         label={
           <FormattedMessage
             id='contract.buttons.execute'
