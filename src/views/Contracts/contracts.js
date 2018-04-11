@@ -122,7 +122,7 @@ class Contracts extends Component {
 
   renderSortButton () {
     const { sortOrder } = this.state;
-
+     
     return (
       <ActionbarSort
         key='sortAccounts'
@@ -157,7 +157,7 @@ class Contracts extends Component {
         label={
           <FormattedMessage
             id='contracts.buttons.watch'
-            defaultMessage='add'
+            defaultMessage='Add'
           />
         }
         onClick={ this.onAddContract }
@@ -168,25 +168,11 @@ class Contracts extends Component {
         label={
           <FormattedMessage
             id='contracts.buttons.deploy'
-            defaultMessage='deploy'
+            defaultMessage='Deploy'
           />
         }
         onClick={ this.onDeployContract }
       />,
-      <Link
-        to='/develop'
-        key='writeContract'
-      >
-        <Button
-          icon='pencil'
-          label={
-            <FormattedMessage
-              id='contracts.buttons.develop'
-              defaultMessage='develop'
-            />
-          }
-        />
-      </Link>,
 
       this.renderSearchButton(),
       this.renderSortButton()

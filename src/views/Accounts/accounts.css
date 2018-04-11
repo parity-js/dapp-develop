@@ -33,11 +33,12 @@
       margin-left: 0.5em;
       overflow: hidden;
       text-overflow: ellipsis;
+      color: rgba(0, 0, 0, .85);
     }
   }
 
   .blockDescription {
-    color: rgba(255, 255, 255, 0.25);
+    color: #aaa;
     margin-top: 1.5em;
   }
 
@@ -59,6 +60,11 @@
     .ethBalances {
       opacity: 1;
     }
+
+    .ethBalances, .allBalances {
+      margin-top: 0;
+    }
+
   }
 
   .overlay {
@@ -75,6 +81,10 @@
     .owner {
       margin: 0.5em;
     }
+  }
+
+  .tags {
+    color: rgba(0, 0, 0, .85);
   }
 
   &:not(:hover) {
@@ -133,6 +143,9 @@
   }
 
   .mainLink h3 {
-    color: rgb(0, 151, 167);
+    color: rgba(0, 0, 0, .85);
+    padding: 0;
+    margin-bottom: 0;
   }
+
 }

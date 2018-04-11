@@ -181,7 +181,6 @@ class Contract extends Component {
 
     return (
       <div className={ styles.blockNumber }>
-      ayayay @TODO
         <FormattedMessage
           id='contract.minedBlock'
           defaultMessage='Mined at block #{blockNumber}'

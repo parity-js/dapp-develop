@@ -40,7 +40,8 @@
   "dependencies": {
     "@parity/api": "^2.1.14",
     "@parity/mobx": "^1.1.2",
-    "@parity/ui": "^3.1.4",
+    "@parity/shared": "^2.2.25",
+    "@parity/ui": "^3.1.5",
     "eslint": "^4.19.1",
     "eslint-config-semistandard": "^12.0.1",
     "eslint-config-standard": "^11.0.0",
@@ -67,7 +68,8 @@
     "react-tap-event-plugin": "^3.0.2",
     "react-tooltip": "^3.4.0",
     "semantic-ui-css": "^2.2.12",
-    "semantic-ui-react": "^0.77.1"
+    "semantic-ui-react": "^0.77.1",
+    "solc": "ngotchac/solc-js"
   },
   "devDependencies": {
     "babel-plugin-transform-export-extensions": "^6.22.0",

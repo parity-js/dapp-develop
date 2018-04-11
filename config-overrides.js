@@ -20,7 +20,6 @@ module.exports = function override(config, env) {
   };
   config = rewireEslint(config, env, overrideEslintOptions);
   config = injectCSSRules(config, env);
-  console.log(JSON.stringify(config,null,2));
   
   return config;
 }

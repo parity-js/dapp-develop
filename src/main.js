@@ -23,8 +23,6 @@ import styles from './reset.css';
 
 import routes from './routes';
 
-import './temporary_styles.css';
-
 export default class MainApplication extends Component {
   static propTypes = {
     routerHistory: PropTypes.any.isRequired
