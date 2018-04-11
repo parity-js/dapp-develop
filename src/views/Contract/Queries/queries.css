@@ -51,12 +51,11 @@
   margin-top: 0 !important;
 
   .methodTitle {
-    margin-bottom: 1em;
+    margin-bottom: .5em;
   }
 
-  input {
-    padding-top: 0 !important;
-    margin-bottom: 1em !important;
+  label {
+    margin-top: 1em !important;
   }
 }
 
@@ -78,9 +77,13 @@
 .methodContent {
   padding-top: 0 !important;
   padding-bottom: 8px !important;
+}
 
-  input {
-    padding: 6px 0 0 0 !important; /* @TODO Move to @parity/ui */
+.vMethods {
+  .methodContent {
+    input {
+      padding: 6px 0 0 0 !important; /* @TODO Move to @parity/ui */
+    }
   }
 }
 
