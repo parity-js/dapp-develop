@@ -82,11 +82,14 @@ class InputQuery extends Component {
 
     return (
       <Card className={ className }>
-        <Card.Header
-          className={ styles.methodTitle }>
-          { name }
-        </Card.Header>
-        <Card.Content>
+        <Card.Content
+          className={ styles.methodContent }
+        >
+          <Card.Header
+            className={ styles.methodTitle }
+          >
+            { name }
+          </Card.Header>
           { this.renderContent() }
         </Card.Content>
       </Card>
@@ -101,14 +104,13 @@ class InputQuery extends Component {
       .map((input, index) => this.renderInput(input, index));
 
     return (
-      <Card>
-        <Card.Header className={ styles.methodContent }>
-          <div className={ styles.methodResults }>
-            { this.renderResults() }
+      <React.Fragment>
+          <div className={ styles.methodContent }>
+            <div className={ styles.methodResults }>
+              { this.renderResults() }
+            </div>
+            { inputsFields }
           </div>
-          { inputsFields }
-        </Card.Header>
-        <Card.Content>
           <Button
             label={
               <FormattedMessage
@@ -119,8 +121,7 @@ class InputQuery extends Component {
             disabled={ !isValid }
             onClick={ this.onClick }
           />
-        </Card.Content>
-      </Card>
+      </React.Fragment>
     );
   }
 

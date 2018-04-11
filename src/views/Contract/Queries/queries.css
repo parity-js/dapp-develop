@@ -23,36 +23,65 @@
 .container {
   align-items: flex-start;
   display: border-box;
+  margin: 10px 0.5em;
 }
 
 .container .method {
   background-color: rgba(255, 255, 255, 0.05) !important;
-  margin: 0.5em;
+  width: auto;
+}
+
+.container label {
+  margin-top: -.1em;
+  display: block;
+  color: #aaa !important;
 }
 
 .vMethods {
   flex-direction: column;
   width: 33.3333%;
+  margin-right: 25px !important;
+  width: 290px;
 }
 
 .hMethods {
   flex: 1;
   flex-direction: row;
   width: 66.6666%;
+  margin-top: 0 !important;
+
+  .methodTitle {
+    margin-bottom: 1em;
+  }
+
+  input {
+    padding-top: 0 !important;
+    margin-bottom: 1em !important;
+  }
 }
 
 .hMethods .container {
   width: 50%;
 }
 
+.input input {
+  opacity: 1 !important;
+  color: rgba(0, 0, 0, .85) !important; /* @TODO UPSTREAM */
+}
+
 .methodTitle {
-  padding-bottom: 8px !important;
+  padding-bottom: 0 !important;
   padding-top: 8px !important;
+  letter-spacing: 1px;
 }
 
 .methodContent {
   padding-top: 0 !important;
   padding-bottom: 8px !important;
+
+  input {
+    padding: 6px 0 0 0 !important; /* @TODO Move to @parity/ui */
+  }
 }
 
 .methodResults {

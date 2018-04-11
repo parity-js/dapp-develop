@@ -124,12 +124,12 @@ export default class Queries extends Component {
     return (
       <div className={ styles.container } key={ fn.signature }>
         <Card className={ styles.method }>
-          <Card.Header className={ styles.methodTitle }>
-            { fn.name }
-          </Card.Header>
           <Card.Content
             className={ styles.methodContent }
           >
+            <Card.Header className={ styles.methodTitle }>
+              { fn.name }
+            </Card.Header>
             {
               abi.outputs
                 .map((output, index) => this.renderValue(values[index], output, index))
@@ -152,6 +152,7 @@ export default class Queries extends Component {
     return (
       <TypedInput
         accounts={ accountsInfo }
+        className={ styles.input }
         allowCopy
         key={ key }
         isEth={ false }
