@@ -63,7 +63,10 @@
   width: 50%;
 }
 
-.input input {
+
+.typedInput > div > div { margin-top: .8em !important; }
+
+.typedInput input {
   opacity: 1 !important;
   color: rgba(0, 0, 0, .85) !important; /* @TODO UPSTREAM */
 }
@@ -77,14 +80,6 @@
 .methodContent {
   padding-top: 0 !important;
   padding-bottom: 8px !important;
-}
-
-.vMethods {
-  .methodContent {
-    input {
-      padding: 6px 0 0 0 !important; /* @TODO Move to @parity/ui */
-    }
-  }
 }
 
 .methodResults {

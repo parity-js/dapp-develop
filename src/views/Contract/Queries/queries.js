@@ -152,7 +152,7 @@ export default class Queries extends Component {
     return (
       <TypedInput
         accounts={ accountsInfo }
-        className={ styles.input }
+        className={ styles.typedInput }
         allowCopy
         key={ key }
         isEth={ false }
