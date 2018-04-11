@@ -136,7 +136,7 @@ class ExecuteContract extends Component {
         label={
           <FormattedMessage
             id='executeContract.button.cancel'
-            defaultMessage='cancel'
+            defaultMessage='Cancel'
           />
         }
         icon={ <CancelIcon /> }
@@ -149,7 +149,7 @@ class ExecuteContract extends Component {
         label={
           <FormattedMessage
             id='executeContract.button.post'
-            defaultMessage='post transaction'
+            defaultMessage='Post transaction'
           />
         }
         disabled={ hasError }
@@ -163,7 +163,7 @@ class ExecuteContract extends Component {
         label={
           <FormattedMessage
             id='executeContract.button.next'
-            defaultMessage='next'
+            defaultMessage='Next'
           />
         }
         icon={ <NextIcon /> }
@@ -176,7 +176,7 @@ class ExecuteContract extends Component {
         label={
           <FormattedMessage
             id='executeContract.button.prev'
-            defaultMessage='prev'
+            defaultMessage='Previous'
           />
         }
         icon={ <PrevIcon /> }

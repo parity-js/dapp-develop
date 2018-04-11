@@ -124,28 +124,28 @@ export default class DetailsStep extends Component {
       .filter((func) => !func.constant)
       .sort((a, b) => (a.name || '').localeCompare(b.name || ''))
       .map((func) => {
-        // const params = (func.abi.inputs || [])
-        //   .map((input, index) => {
-        //     return (
-        //       <span key={ input.name }>
-        //         <span>{ index ? ', ' : '' }</span>
-        //         <span className={ styles.paramname }>{ input.name }: </span>
-        //         <span>{ input.type }</span>
-        //       </span>
-        //     );
-        //   });
+        const params = (func.abi.inputs || [])
+          .map((input, index) => {
+            return (
+              <span key={ input.name }>
+                <span>{ index ? ', ' : '' }</span>
+                <span className={ styles.paramname }>{ input.name }: </span>
+                <span>{ input.type }</span>
+              </span>
+            );
+          });
 
-        // const name = (
-        //   <div>
-        //     <span>{ func.name }</span>
-        //     <span className={ styles.paramname }>(</span>
-        //     { params }
-        //     <span className={ styles.paramname }>)</span>
-        //   </div>
-        // );
+        const name = (
+          <div>
+            <span>{ func.name }</span>
+            <span className={ styles.paramname }>(</span>
+            { params }
+            <span className={ styles.paramname }>)</span>
+          </div>
+        );
 
         // (previously func.name as label, name as content)
-        return {text: func.name || '()', value: func.signature}
+        return {text: name || '()', value: func.signature}
       });
 
     return (
