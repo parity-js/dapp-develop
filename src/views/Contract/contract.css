@@ -15,6 +15,10 @@
 /* along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+.actionBar {
+  padding-top: 0 !important;
+}
+
 .events {
   width: 100%;
   border: none;

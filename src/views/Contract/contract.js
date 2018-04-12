@@ -311,6 +311,7 @@ class Contract extends Component {
 
     return (
       <Actionbar
+        className={ styles.actionBar }
         title={
           <FormattedMessage
             id='contract.title'

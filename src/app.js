@@ -19,6 +19,16 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
+import Page from '@parity/ui/lib/Page';
+
+import styles from './app.css'
+
+import {Grid, Menu } from 'semantic-ui-react'
+import { FormattedMessage } from 'react-intl';;
+
+const WATCHED_CONTRACTS = 'WATCHED_CONTRACTS';
+const DEVELOP = 'DEVELOP';
+
 export default class App extends Component {
 
   static propTypes = {
@@ -27,10 +37,49 @@ export default class App extends Component {
 
   render () {
     return (
-      <div>
-        Navigation: <Link to="/">Contracts</Link> - <Link to="/develop">Develop</Link>
-        {this.props.children}
-      </div>
+      <Page
+        // title={
+        //   <FormattedMessage
+        //     id="dapps.develop.title"
+        //     defaultMessage="Contracts"
+        //   />
+        // }
+        className = { styles.page }
+      >
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={3}>
+              <Menu pointing secondary vertical>
+                <Menu.Item
+                  name={WATCHED_CONTRACTS}
+                  active={this.props.location.pathname === "/"}
+                >
+                  <Link to="/" className={styles.navLink}>
+                    <FormattedMessage
+                      id="dapps.develop.watchedContracts"
+                      defaultMessage="Watched Contracts"
+                    />
+                  </Link>
+                </Menu.Item>
+                <Menu.Item
+                  name={DEVELOP}
+                  active={this.props.location.pathname === "/develop"}
+                >
+                  <Link to="/develop" className={styles.navLink}>
+                    <FormattedMessage
+                      id="dapps.develop.develop"
+                      defaultMessage="Develop"
+                    />
+                  </Link>
+                </Menu.Item>
+              </Menu>
+            </Grid.Column>
+            <Grid.Column width={13}>
+              {this.props.children}
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>        
+      </Page>
     );
   }
 }

@@ -183,7 +183,7 @@ class Contracts extends Component {
         title={
           <FormattedMessage
             id='contracts.title'
-            defaultMessage='Contracts'
+            defaultMessage='Watched Contracts'
           />
         }
         buttons={ buttons }

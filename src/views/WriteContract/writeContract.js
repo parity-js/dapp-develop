@@ -250,7 +250,7 @@ class WriteContract extends Component {
         title={
           <FormattedMessage
             id='writeContract.title.main'
-            defaultMessage='Write a Contract'
+            defaultMessage='Develop'
           />
         }
         buttons={ buttons }
