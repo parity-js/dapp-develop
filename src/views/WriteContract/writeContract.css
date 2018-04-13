@@ -68,11 +68,11 @@
   flex: 0 1 auto !important;
 
   &:global(.ace-solarized-dark) {
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
 
     :global(.ace_gutter) {
-      background-color: rgb(243, 243, 243);
-      color: #d2d2d2;
+      /* background-color: rgb(243, 243, 243);
+      color: #d2d2d2; */
     }
 
     :global(.ace_content) {

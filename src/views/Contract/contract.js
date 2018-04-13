@@ -233,6 +233,7 @@ class Contract extends Component {
               value={ JSON.stringify(contract.meta.abi, null, 2) }
               mode='json'
               readOnly
+              theme='tomorrow'
             />
           </div>
         </div>
@@ -253,6 +254,7 @@ class Contract extends Component {
         <Editor
           value={ source }
           readOnly
+          theme='tomorrow'
         />
       </div>
     );

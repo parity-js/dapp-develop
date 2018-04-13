@@ -78,6 +78,7 @@ export default class SaveContract extends Component {
             value={ sourcecode }
             maxLines={ Infinity }
             readOnly
+            theme='tomorrow'
           />
         </div>
       </Portal>

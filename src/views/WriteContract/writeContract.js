@@ -153,6 +153,7 @@ class WriteContract extends Component {
                 annotations={ annotations }
                 value={ sourcecode }
                 className={ styles.mainEditor }
+                theme='tomorrow'
               />
             </div>
 
@@ -303,6 +304,7 @@ class WriteContract extends Component {
         readOnly
         value={ content }
         maxLines={ 20 }
+        theme='tomorrow'
       />
     );
   }

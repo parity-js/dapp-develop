@@ -179,6 +179,7 @@ export default class LoadContract extends Component {
             value={ sourcecode }
             maxLines={ 20 }
             readOnly
+            theme='tomorrow'
           />
         </div>
       </div>
@@ -204,6 +205,7 @@ export default class LoadContract extends Component {
           readOnly
           maxLines={ Infinity }
           value={ sourcecode }
+          theme='tomorrow'
         />
       </div>
     );
