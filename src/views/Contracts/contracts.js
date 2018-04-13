@@ -123,7 +123,6 @@ class Contracts extends Component {
 
   renderSortButton () {
     const { sortOrder } = this.state;
-     
     return (
       <ActionbarSort
         key='sortAccounts'

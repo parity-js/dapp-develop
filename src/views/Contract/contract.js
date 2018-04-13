@@ -232,7 +232,6 @@ class Contract extends Component {
             <Editor
               value={ JSON.stringify(contract.meta.abi, null, 2) }
               mode='json'
-              maxLines={ 20 }
               readOnly
             />
           </div>

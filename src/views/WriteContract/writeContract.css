@@ -64,6 +64,9 @@
 }
 
 .mainEditor {
+
+  flex: 0 1 auto !important;
+
   &:global(.ace-solarized-dark) {
     background-color: rgb(255, 255, 255);
 
@@ -107,6 +110,9 @@
   flex-direction: column;
   margin-right: 0.5em;
   overflow: auto;
+  height: 100%;
+  position: sticky;
+  top: 0;
 
   .panel {
     padding: 1em;

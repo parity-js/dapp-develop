@@ -109,6 +109,7 @@ class WriteContract extends Component {
 
               <Editor
                 ref='editor'
+                maxLines={ Infinity }
                 onChange={ this.store.handleEditSourcecode }
                 onExecute={ this.store.handleCompile }
                 annotations={ annotations }
