@@ -31,6 +31,43 @@ import { DeployContract, SaveContract, LoadContract } from '~/modals';
 import WriteContractStore from './writeContractStore';
 import styles from './writeContract.css';
 
+// Moved to a separate component for performance issues
+@observer
+class SolidityVersions extends Component {
+  
+  store = WriteContractStore.get();
+
+  render () {
+    const { builds, selectedBuild } = this.store;
+
+    const buildsList = builds.map((build, index) => (
+      {text:
+        (build.release
+        ? <span className={ styles.big }>
+            { build.version }
+          </span>
+        : build.longVersion),
+      value: index}
+    ));
+
+    return (
+      <div>
+        <Dropdown
+          label={
+            <FormattedMessage
+              id='writeContract.title.selectSolidity'
+              defaultMessage='Select a Solidity version'
+            />
+          }
+          value={ selectedBuild }
+          onChange={ this.store.handleSelectBuild }
+          options={ buildsList }
+        />
+      </div>
+    );
+  }
+}
+
 @observer
 class WriteContract extends Component {
   static propTypes = {
@@ -391,38 +428,8 @@ class WriteContract extends Component {
             />
           </div>
         </div>
-        { this.renderSolidityVersions() }
+        <SolidityVersions />
         { content }
-      </div>
-    );
-  }
-
-  renderSolidityVersions () {
-    const { builds, selectedBuild } = this.store;
-
-    const buildsList = builds.map((build, index) => (
-      {text:
-        (build.release
-        ? <span className={ styles.big }>
-            { build.version }
-          </span>
-        : build.longVersion),
-      value: index}
-    ));
-
-    return (
-      <div>
-        <Dropdown
-          label={
-            <FormattedMessage
-              id='writeContract.title.selectSolidity'
-              defaultMessage='Select a Solidity version'
-            />
-          }
-          value={ selectedBuild }
-          onChange={ this.store.handleSelectBuild }
-          options={ buildsList }
-        />
       </div>
     );
   }
