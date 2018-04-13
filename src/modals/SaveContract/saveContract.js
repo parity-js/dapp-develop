@@ -76,7 +76,7 @@ export default class SaveContract extends Component {
           <Editor
             className={ styles.source }
             value={ sourcecode }
-            maxLines={ 25 }
+            maxLines={ Infinity }
             readOnly
           />
         </div>

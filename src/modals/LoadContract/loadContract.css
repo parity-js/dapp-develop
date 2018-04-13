@@ -16,12 +16,15 @@
 */
 
 .loadContainer {
-  display: flex;
-  flex-direction: row;
+}
 
-  > * {
-    flex: 50%;
-    width: 0;
+.contractDeleteButton {
+  float: right;
+  position: relative;
+  top: -12px;
+  opacity: .8;
+  &:hover {
+    opacity: 1;
   }
 }
 

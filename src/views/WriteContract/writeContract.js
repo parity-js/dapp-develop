@@ -31,7 +31,7 @@ import { DeployContract, SaveContract, LoadContract } from '~/modals';
 import WriteContractStore from './writeContractStore';
 import styles from './writeContract.css';
 
-// Moved to a separate component for performance issues
+// Moved to a separate component for performance issues [ac]
 @observer
 class SolidityVersions extends Component {
   
@@ -146,6 +146,7 @@ class WriteContract extends Component {
 
               <Editor
                 ref='editor'
+                minLines={ 23 }
                 maxLines={ Infinity }
                 onChange={ this.store.handleEditSourcecode }
                 onExecute={ this.store.handleCompile }
