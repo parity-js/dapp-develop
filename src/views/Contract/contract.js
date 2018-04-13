@@ -177,8 +177,6 @@ class Contract extends Component {
 
     const formattedBlockNumber = (new BigNumber(blockNumber)).toFormat();
 
-  console.log("STYLES", styles);
-
     return (
       <div className={ styles.blockNumber }>
         <FormattedMessage

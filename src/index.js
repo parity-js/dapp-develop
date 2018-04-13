@@ -31,19 +31,10 @@ import Api from '@parity/api';
 
 import { initStore } from '@parity/shared/lib/redux'; 
 import ContextProvider from '@parity/ui/lib/ContextProvider';
-// import muiTheme from '@parity/ui/lib/Theme';
 import MainApplication from './main';
 
 import { loadSender, patchApi } from '@parity/shared/lib/util/tx';
 import { setApi } from '@parity/shared/lib/redux/providers/apiActions';
-
-// import './environment';
-
-// @TODO REDESIGN
-// import '../assets/fonts/Roboto/font.css';
-// import '../assets/fonts/RobotoMono/font.css';
-
-
 
 es6Promise.polyfill();
 
@@ -53,14 +44,11 @@ const api = new Api(window.ethereum);
 
 patchApi(api); // @TODO Not sure what those are for
 loadSender(api);
-// ContractInstances.create(api); // @TODO
+// ContractInstances.create(api);
 
 const store = initStore(api, hashHistory);
 store.dispatch({ type: 'initAll', api });
 store.dispatch(setApi(api));
-
-// muiTheme={ muiTheme }
-// muiTheme={ muiTheme }
 
 ReactDOM.render(
   <AppContainer>
@@ -76,7 +64,6 @@ ReactDOM.render(
 if (module.hot) {
   module.hot.accept('./main.js', () => {
     require('./main.js');
-// store={ store }
     ReactDOM.render(
       <AppContainer>
         <ContextProvider api={ api } store = {store }>

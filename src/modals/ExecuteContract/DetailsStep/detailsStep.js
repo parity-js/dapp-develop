@@ -145,7 +145,7 @@ export default class DetailsStep extends Component {
         );
 
         // (previously func.name as label, name as content)
-        return {text: name || '()', value: func.signature}
+        return {text: name || '()', name: func.name, value: func.signature}
       });
 
     return (
@@ -165,9 +165,14 @@ export default class DetailsStep extends Component {
         }
         options={ functions }
         onChange={ this.onFuncChange }
+        search={ this.searchFn }
         value={ func.signature }
       />
     );
+  }
+
+  searchFn(options, query) {
+    return options.filter(({name}) => name && name.toLowerCase().includes(query.toLowerCase()));
   }
 
   renderParameters () {

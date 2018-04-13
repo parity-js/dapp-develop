@@ -338,7 +338,6 @@ export default class LoadContract extends Component {
   }
 
   onDeleteRequest = (id) => {
-    console.log('on delete request',id)
     this.setState({
       deleteRequest: true,
       deleteId: id

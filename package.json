@@ -9,7 +9,7 @@
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paritytech/dapp-develop.git"
+    "url": "git+https://github.com/parity-js/dapp-develop.git"
   },
   "homepage": "./",
   "proxy": {
