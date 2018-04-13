@@ -65,10 +65,11 @@
 
 .mainEditor {
   &:global(.ace-solarized-dark) {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
 
     :global(.ace_gutter) {
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgb(243, 243, 243);
+      color: #d2d2d2;
     }
 
     :global(.ace_content) {
@@ -108,7 +109,6 @@
   overflow: auto;
 
   .panel {
-    background-color: rgba(0, 0, 0, 0.5);
     padding: 1em;
     flex: 1;
     display: flex;

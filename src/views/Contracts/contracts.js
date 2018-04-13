@@ -22,6 +22,7 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { uniq, isEqual } from 'lodash';
+import styles from './contracts.css';
 
 import { AddContract, DeployContract } from '~/modals';
 import { setVisibleAccounts } from '@parity/shared/lib/redux/providers/personalActions';
@@ -105,7 +106,7 @@ class Contracts extends Component {
         { this.renderActionbar() }
         { this.renderAddContract() }
         { this.renderDeployContract() }
-        <Page>
+        <Page className={ styles.page } >
           <List
             link='contracts'
             search={ searchValues }
@@ -183,7 +184,7 @@ class Contracts extends Component {
         title={
           <FormattedMessage
             id='contracts.title'
-            defaultMessage='Watched Contracts'
+            defaultMessage='Contracts'
           />
         }
         buttons={ buttons }

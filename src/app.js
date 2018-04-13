@@ -46,39 +46,31 @@ export default class App extends Component {
         // }
         className = { styles.page }
       >
-        <Grid>
-          <Grid.Row>
-            <Grid.Column width={3}>
-              <Menu pointing secondary vertical>
-                <Menu.Item
-                  name={WATCHED_CONTRACTS}
-                  active={this.props.location.pathname === "/"}
-                >
-                  <Link to="/" className={styles.navLink}>
-                    <FormattedMessage
-                      id="dapps.develop.watchedContracts"
-                      defaultMessage="Watched Contracts"
-                    />
-                  </Link>
-                </Menu.Item>
-                <Menu.Item
-                  name={DEVELOP}
-                  active={this.props.location.pathname === "/develop"}
-                >
-                  <Link to="/develop" className={styles.navLink}>
-                    <FormattedMessage
-                      id="dapps.develop.develop"
-                      defaultMessage="Develop"
-                    />
-                  </Link>
-                </Menu.Item>
-              </Menu>
-            </Grid.Column>
-            <Grid.Column width={13}>
-              {this.props.children}
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>        
+        <Menu pointing secondary>
+          <Menu.Item
+            name={WATCHED_CONTRACTS}
+            active={this.props.location.pathname === "/"}
+          >
+            <Link to="/" className={styles.navLink}>
+              <FormattedMessage
+                id="dapps.develop.watchedContracts"
+                defaultMessage="Watched Contracts"
+              />
+            </Link>
+          </Menu.Item>
+          <Menu.Item
+            name={DEVELOP}
+            active={this.props.location.pathname === "/develop"}
+          >
+            <Link to="/develop" className={styles.navLink}>
+              <FormattedMessage
+                id="dapps.develop.develop"
+                defaultMessage="Develop"
+              />
+            </Link>
+          </Menu.Item>
+        </Menu>
+        {this.props.children}
       </Page>
     );
   }
