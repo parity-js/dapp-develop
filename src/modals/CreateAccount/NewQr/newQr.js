@@ -50,13 +50,13 @@ export default class NewQr extends Component {
           hint={
             <FormattedMessage
               id='createAccount.newQr.address.hint'
-              defaultMessage='the network address for the account'
+              defaultMessage='The network address for the account'
             />
           }
           label={
             <FormattedMessage
               id='createAccount.newQr.address.label'
-              defaultMessage='address'
+              defaultMessage='Address'
             />
           }
           value={ qrAddress }
@@ -67,13 +67,13 @@ export default class NewQr extends Component {
           hint={
             <FormattedMessage
               id='createAccount.newQr.name.hint'
-              defaultMessage='a descriptive name for the account'
+              defaultMessage='A descriptive name for the account'
             />
           }
           label={
             <FormattedMessage
               id='createAccount.newQr.name.label'
-              defaultMessage='account name'
+              defaultMessage='Account name'
             />
           }
           onChange={ this.onEditAccountName }
@@ -83,13 +83,13 @@ export default class NewQr extends Component {
           hint={
             <FormattedMessage
               id='createAccount.newQr.description.hint'
-              defaultMessage='a description for the account'
+              defaultMessage='A description for the account'
             />
           }
           label={
             <FormattedMessage
               id='createAccount.newQr.description.label'
-              defaultMessage='account description'
+              defaultMessage='Account description'
             />
           }
           onChange={ this.onEditAccountDescription }

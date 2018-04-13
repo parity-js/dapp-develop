@@ -57,7 +57,7 @@ const ABI_TYPES = [
             <a href='https://github.com/ethereum/dapp-bin/blob/master/wallet/wallet.sol' target='_blank'>
               <FormattedMessage
                 id='addContract.abiType.multisigWallet.link'
-                defaultMessage='see contract code'
+                defaultMessage='See contract code'
               />
             </a>
           )

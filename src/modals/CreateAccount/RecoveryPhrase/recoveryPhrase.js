@@ -47,7 +47,7 @@ export default class RecoveryPhrase extends Component {
               ? (
                 <FormattedMessage
                   id='createAccount.recoveryPhrase.passPhrase.error'
-                  defaultMessage='enter a recovery phrase'
+                  defaultMessage='Enter a recovery phrase'
                 />
               )
               : null
@@ -55,13 +55,13 @@ export default class RecoveryPhrase extends Component {
             hint={
               <FormattedMessage
                 id='createAccount.recoveryPhrase.phrase.hint'
-                defaultMessage='the account recovery phrase'
+                defaultMessage='The account recovery phrase'
               />
             }
             label={
               <FormattedMessage
                 id='createAccount.recoveryPhrase.phrase.label'
-                defaultMessage='account recovery phrase'
+                defaultMessage='Account recovery phrase'
               />
             }
             onChange={ this.onEditPhrase }
@@ -72,13 +72,13 @@ export default class RecoveryPhrase extends Component {
             hint={
               <FormattedMessage
                 id='createAccount.recoveryPhrase.name.hint'
-                defaultMessage='a descriptive name for the account'
+                defaultMessage='A descriptive name for the account'
               />
             }
             label={
               <FormattedMessage
                 id='createAccount.recoveryPhrase.name.label'
-                defaultMessage='account name'
+                defaultMessage='Account name'
               />
             }
             onChange={ this.onEditName }
@@ -106,7 +106,7 @@ export default class RecoveryPhrase extends Component {
                 hint={
                   <FormattedMessage
                     id='createAccount.recoveryPhrase.password.hint'
-                    defaultMessage='a strong, unique password'
+                    defaultMessage='A strong, unique password'
                   />
                 }
                 label={
@@ -126,7 +126,7 @@ export default class RecoveryPhrase extends Component {
                 hint={
                   <FormattedMessage
                     id='createAccount.recoveryPhrase.password2.hint'
-                    defaultMessage='verify your password'
+                    defaultMessage='Verify your password'
                   />
                 }
                 label={

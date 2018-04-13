@@ -111,7 +111,7 @@ class Accounts extends Component {
             text={
               <FormattedMessage
                 id='accounts.tooltip.overview'
-                defaultMessage='your accounts are visible for easy access, allowing you to edit the meta information, make transfers, view transactions and fund the account'
+                defaultMessage='Your accounts are visible for easy access, allowing you to edit the meta information, make transfers, view transactions and fund the account'
               />
             }
           />
@@ -259,7 +259,7 @@ class Accounts extends Component {
         label={
           <FormattedMessage
             id='accounts.button.newAccount'
-            defaultMessage='account'
+            defaultMessage='Account'
           />
         }
         onClick={ this.onNewAccountClick }
@@ -271,7 +271,7 @@ class Accounts extends Component {
         label={
           <FormattedMessage
             id='accounts.button.restoreAccount'
-            defaultMessage='restore'
+            defaultMessage='Restore'
           />
         }
         onClick={ this.onRestoreAccountClick }
@@ -282,7 +282,7 @@ class Accounts extends Component {
         label={
           <FormattedMessage
             id='accounts.button.export'
-            defaultMessage='export'
+            defaultMessage='Export'
           />
         }
         onClick={ this.onNewExportClick }
@@ -308,7 +308,7 @@ class Accounts extends Component {
           text={
             <FormattedMessage
               id='accounts.tooltip.actions'
-              defaultMessage='actions relating to the current view are available on the toolbar for quick access, be it for performing actions or creating a new item'
+              defaultMessage='Actions relating to the current view are available on the toolbar for quick access, be it for performing actions or creating a new item'
             />
           }
         />
@@ -364,7 +364,7 @@ class Accounts extends Component {
           label={
             <FormattedMessage
               id='accounts.button.vaults'
-              defaultMessage='vaults'
+              defaultMessage='Vaults'
             />
           }
           onClick={ this.onVaultsClick }
@@ -381,7 +381,7 @@ class Accounts extends Component {
         label={
           <FormattedMessage
             id='accounts.button.newWallet'
-            defaultMessage='wallet'
+            defaultMessage='Wallet'
           />
         }
         onClick={ this.onNewWalletClick }

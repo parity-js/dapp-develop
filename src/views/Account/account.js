@@ -163,7 +163,7 @@ class Account extends Component {
         label={
           <FormattedMessage
             id='account.button.transfer'
-            defaultMessage='transfer'
+            defaultMessage='Transfer'
           />
         }
         onClick={ this.store.toggleTransferDialog }
@@ -179,7 +179,7 @@ class Account extends Component {
         label={
           <FormattedMessage
             id='account.button.shapeshift'
-            defaultMessage='shapeshift'
+            defaultMessage='Shapeshift'
           />
         }
         onClick={ this.store.toggleFundDialog }
@@ -192,7 +192,7 @@ class Account extends Component {
             label={
               <FormattedMessage
                 id='account.button.verify'
-                defaultMessage='verify'
+                defaultMessage='Verify'
               />
             }
             onClick={ this.store.toggleVerificationDialog }
@@ -220,7 +220,7 @@ class Account extends Component {
         label={
           <FormattedMessage
             id='account.button.edit'
-            defaultMessage='edit'
+            defaultMessage='Edit'
           />
         }
         onClick={ this.store.toggleEditDialog }
@@ -231,7 +231,7 @@ class Account extends Component {
         label={
           <FormattedMessage
             id='account.button.export'
-            defaultMessage='export'
+            defaultMessage='Export'
           />
         }
         onClick={ this.store.toggleExportDialog }
@@ -257,13 +257,13 @@ class Account extends Component {
             ? (
               <FormattedMessage
                 id='account.button.forget'
-                defaultMessage='forget'
+                defaultMessage='Forget'
               />
             )
             : (
               <FormattedMessage
                 id='account.button.delete'
-                defaultMessage='delete'
+                defaultMessage='Delete'
               />
             )
         }

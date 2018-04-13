@@ -47,43 +47,43 @@ const TITLES = {
   type: (
     <FormattedMessage
       id='createAccount.title.createType'
-      defaultMessage='creation type'
+      defaultMessage='Creation type'
     />
   ),
   create: (
     <FormattedMessage
       id='createAccount.title.createAccount'
-      defaultMessage='create account'
+      defaultMessage='Create account'
     />
   ),
   info: (
     <FormattedMessage
       id='createAccount.title.accountInfo'
-      defaultMessage='account information'
+      defaultMessage='Account information'
     />
   ),
   backup: (
     <FormattedMessage
       id='createAccount.title.backupPhrase'
-      defaultMessage='confirm recovery phrase'
+      defaultMessage='Confirm recovery phrase'
     />
   ),
   import: (
     <FormattedMessage
       id='createAccount.title.importAccount'
-      defaultMessage='import account'
+      defaultMessage='Import account'
     />
   ),
   restore: (
     <FormattedMessage
       id='createAccount.title.restoreAccount'
-      defaultMessage='restore account'
+      defaultMessage='Restore account'
     />
   ),
   qr: (
     <FormattedMessage
       id='createAccount.title.qr'
-      defaultMessage='external account'
+      defaultMessage='External account'
     />
   )
 };

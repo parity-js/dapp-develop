@@ -61,13 +61,13 @@ export default class DetailsStep extends Component {
           hint={
             <FormattedMessage
               id='executeContract.details.address.label'
-              defaultMessage='the account to transact with'
+              defaultMessage='The account to transact with'
             />
           }
           label={
             <FormattedMessage
               id='executeContract.details.address.hint'
-              defaultMessage='from account'
+              defaultMessage='From account'
             />
            }
           onChange={ onFromAddressChange }
@@ -82,13 +82,13 @@ export default class DetailsStep extends Component {
               hint={
                 <FormattedMessage
                   id='executeContract.details.amount.hint'
-                  defaultMessage='the amount to send to with the transaction'
+                  defaultMessage='The amount to send to with the transaction'
                 />
               }
               label={
                 <FormattedMessage
                   id='executeContract.details.amount.label'
-                  defaultMessage='transaction value (in ETH)'
+                  defaultMessage='Transaction value (in ETH)'
                 />
               }
               onSubmit={ onAmountChange }
@@ -101,7 +101,7 @@ export default class DetailsStep extends Component {
               label={
                 <FormattedMessage
                   id='executeContract.details.advancedCheck.label'
-                  defaultMessage='advanced sending options'
+                  defaultMessage='Advanced sending options'
                 />
               }
               onClick={ onAdvancedClick }
@@ -154,13 +154,13 @@ export default class DetailsStep extends Component {
         hint={
           <FormattedMessage
             id='executeContract.details.function.hint'
-            defaultMessage='the function to call on the contract'
+            defaultMessage='The function to call on the contract'
           />
         }
         label={
           <FormattedMessage
             id='executeContract.details.function.label'
-            defaultMessage='function to execute'
+            defaultMessage='Function to execute'
           />
         }
         options={ functions }

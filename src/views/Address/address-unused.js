@@ -148,7 +148,7 @@ class Address extends Component {
         label={
           <FormattedMessage
             id='address.buttons.edit'
-            defaultMessage='edit'
+            defaultMessage='Edit'
           />
         }
         onClick={ this.onEditClick }
@@ -159,7 +159,7 @@ class Address extends Component {
         label={
           <FormattedMessage
             id='address.buttons.forget'
-            defaultMessage='forget'
+            defaultMessage='Forget'
           />
         }
         onClick={ this.showDeleteDialog }
@@ -173,7 +173,7 @@ class Address extends Component {
         label={
           <FormattedMessage
             id='address.buttons.save'
-            defaultMessage='save'
+            defaultMessage='Save'
           />
         }
         onClick={ this.onOpenAdd }

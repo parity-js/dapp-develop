@@ -60,7 +60,7 @@ class Delete extends Component {
         title={
           <FormattedMessage
             id='address.delete.title'
-            defaultMessage='confirm removal'
+            defaultMessage='Confirm removal'
           />
         }
         visible

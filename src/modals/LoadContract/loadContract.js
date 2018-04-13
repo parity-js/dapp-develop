@@ -72,13 +72,13 @@ export default class LoadContract extends Component {
             ? (
               <FormattedMessage
                 id='loadContract.title.remove'
-                defaultMessage='confirm removal'
+                defaultMessage='Confirm removal'
               />
             )
             : (
               <FormattedMessage
                 id='loadContract.title.view'
-                defaultMessage='view contracts'
+                defaultMessage='View contracts'
               />
             )
         }

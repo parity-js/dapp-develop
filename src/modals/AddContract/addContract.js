@@ -53,12 +53,12 @@ class AddContract extends Component {
         steps={ [
           <FormattedMessage
             id='addContract.title.type'
-            defaultMessage='choose a contract type'
+            defaultMessage='Choose a contract type'
             key='type'
           />,
           <FormattedMessage
             id='addContract.title.details'
-            defaultMessage='enter contract details'
+            defaultMessage='Enter contract details'
             key='details'
           />
         ] }
@@ -166,13 +166,13 @@ class AddContract extends Component {
           hint={
             <FormattedMessage
               id='addContract.address.hint'
-              defaultMessage='the network address for the contract'
+              defaultMessage='The network address for the contract'
             />
           }
           label={
             <FormattedMessage
               id='addContract.address.label'
-              defaultMessage='network address'
+              defaultMessage='Network address'
             />
           }
           onChange={ this.onChangeAddress }
@@ -184,13 +184,13 @@ class AddContract extends Component {
           hint={
             <FormattedMessage
               id='addContract.name.hint'
-              defaultMessage='a descriptive name for the contract'
+              defaultMessage='A descriptive name for the contract'
             />
           }
           label={
             <FormattedMessage
               id='addContract.name.label'
-              defaultMessage='contract name'
+              defaultMessage='Contract name'
             />
           }
           onSubmit={ this.onEditName }
@@ -200,13 +200,13 @@ class AddContract extends Component {
           hint={
             <FormattedMessage
               id='addContract.description.hint'
-              defaultMessage='an expanded description for the entry'
+              defaultMessage='An expanded description for the entry'
             />
           }
           label={
             <FormattedMessage
               id='addContract.description.label'
-              defaultMessage='(optional) contract description'
+              defaultMessage='(optional) Contract description'
             />
           }
           onSubmit={ this.onEditDescription }
@@ -217,13 +217,13 @@ class AddContract extends Component {
           hint={
             <FormattedMessage
               id='addContract.abi.hint'
-              defaultMessage='the abi for the contract'
+              defaultMessage='The abi for the contract'
             />
           }
           label={
             <FormattedMessage
               id='addContract.abi.label'
-              defaultMessage='contract abi'
+              defaultMessage='Contract abi'
             />
           }
           onSubmit={ this.onEditAbi }

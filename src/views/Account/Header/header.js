@@ -191,7 +191,7 @@ export default class Header extends Component {
       <div className={ styles.uuidline }>
         <FormattedMessage
           id='account.header.uuid'
-          defaultMessage='uuid: {uuid}'
+          defaultMessage='Uuid: {uuid}'
           values={ {
             uuid
           } }

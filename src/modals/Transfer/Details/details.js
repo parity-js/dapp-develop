@@ -63,7 +63,7 @@ export default class Details extends Component {
     const label = (
       <FormattedMessage
         id='transfer.details.amount.label'
-        defaultMessage='amount to transfer (in {tag})'
+        defaultMessage='Amount to transfer (in {tag})'
         values={ {
           tag: token.tag
         } }
@@ -83,7 +83,7 @@ export default class Details extends Component {
               hint={
                 <FormattedMessage
                   id='transfer.details.amount.hint'
-                  defaultMessage='the amount to transfer to the recipient'
+                  defaultMessage='The amount to transfer to the recipient'
                 />
               }
               value={ value }
@@ -97,7 +97,7 @@ export default class Details extends Component {
               label={
                 <FormattedMessage
                   id='transfer.details.fullBalance.label'
-                  defaultMessage='full account balance'
+                  defaultMessage='Full account balance'
                 />
               }
               onCheck={ this.onCheckAll }
@@ -112,7 +112,7 @@ export default class Details extends Component {
               label={
                 <FormattedMessage
                   id='transfer.details.total.label'
-                  defaultMessage='total transaction amount'
+                  defaultMessage='Total transaction amount'
                 />
               }
               error={ totalError }
@@ -129,7 +129,7 @@ export default class Details extends Component {
               label={
                 <FormattedMessage
                   id='transfer.details.advanced.label'
-                  defaultMessage='advanced sending options'
+                  defaultMessage='Advanced sending options'
                 />
               }
               onCheck={ this.onCheckExtras }
@@ -156,13 +156,13 @@ export default class Details extends Component {
           label={
             <FormattedMessage
               id='transfer.details.sender.label'
-              defaultMessage='sender address'
+              defaultMessage='Sender address'
             />
           }
           hint={
             <FormattedMessage
               id='transfer.details.sender.hint'
-              defaultMessage='the sender address'
+              defaultMessage='The sender address'
             />
           }
           value={ sender }
@@ -181,13 +181,13 @@ export default class Details extends Component {
           label={
             <FormattedMessage
               id='transfer.details.recipient.label'
-              defaultMessage='recipient address'
+              defaultMessage='Recipient address'
             />
           }
           hint={
             <FormattedMessage
               id='transfer.details.recipient.hint'
-              defaultMessage='the recipient address'
+              defaultMessage='The recipient address'
             />
           }
           error={ recipientError }

@@ -55,7 +55,7 @@ class Vaults extends Component {
             label={
               <FormattedMessage
                 id='vaults.button.add'
-                defaultMessage='create vault'
+                defaultMessage='Create vault'
               />
             }
             onClick={ this.onOpenCreate }
@@ -134,7 +134,7 @@ class Vaults extends Component {
                 label={
                   <FormattedMessage
                     id='vaults.button.accounts'
-                    defaultMessage='accounts'
+                    defaultMessage='Accounts'
                   />
                 }
                 onClick={ onClickAccounts }
@@ -145,7 +145,7 @@ class Vaults extends Component {
                 label={
                   <FormattedMessage
                     id='vaults.button.edit'
-                    defaultMessage='edit'
+                    defaultMessage='Edit'
                   />
                 }
                 onClick={ onClickEdit }
@@ -156,7 +156,7 @@ class Vaults extends Component {
                 label={
                   <FormattedMessage
                     id='vaults.button.close'
-                    defaultMessage='close'
+                    defaultMessage='Close'
                   />
                 }
                 onClick={ onClickOpen }

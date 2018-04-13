@@ -21,56 +21,56 @@ export default {
   duplicateName: (
     <FormattedMessage
       id='errors.duplicateName'
-      defaultMessage='the name already exists'
+      defaultMessage='The name already exists'
     />
   ),
 
   noFile: (
     <FormattedMessage
       id='errors.noFile'
-      defaultMessage='select a valid wallet file to import'
+      defaultMessage='Select a valid wallet file to import'
     />
   ),
 
   noKey: (
     <FormattedMessage
       id='errors.noKey'
-      defaultMessage='you need to provide the raw private key'
+      defaultMessage='You need to provide the raw private key'
     />
   ),
 
   noMatchPassword: (
     <FormattedMessage
       id='errors.noMatchPassword'
-      defaultMessage='the supplied passwords does not match'
+      defaultMessage='The supplied passwords does not match'
     />
   ),
 
   noMatchBackupPhrase: (
     <FormattedMessage
       id='errors.noMatchBackupPhrase'
-      defaultMessage='the supplied recovery phrase does not match'
+      defaultMessage='The supplied recovery phrase does not match'
     />
   ),
 
   noMatchPhraseBackedUp: (
     <FormattedMessage
       id='errors.noMatchPhraseBackedUp'
-      defaultMessage='type "I have written down the phrase"'
+      defaultMessage='Type "I have written down the phrase"'
     />
   ),
 
   noName: (
     <FormattedMessage
       id='errors.noName'
-      defaultMessage='you need to specify a valid name'
+      defaultMessage='You need to specify a valid name'
     />
   ),
 
   invalidKey: (
     <FormattedMessage
       id='errors.invalidKey'
-      defaultMessage='the raw key needs to be hex, 64 characters in length and contain the prefix "0x"'
+      defaultMessage='The raw key needs to be hex, 64 characters in length and contain the prefix "0x"'
     />
   )
 

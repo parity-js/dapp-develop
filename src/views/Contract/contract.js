@@ -220,7 +220,7 @@ class Contract extends Component {
         title={
           <FormattedMessage
             id='contract.details.title'
-            defaultMessage='contract details'
+            defaultMessage='Contract details'
           />
         }
       >
@@ -270,7 +270,7 @@ class Contract extends Component {
         label={
           <FormattedMessage
             id='contract.buttons.execute'
-            defaultMessage='execute'
+            defaultMessage='Execute'
           />
         }
         onClick={ this.showExecuteDialog }
@@ -281,7 +281,7 @@ class Contract extends Component {
         label={
           <FormattedMessage
             id='contract.buttons.edit'
-            defaultMessage='edit'
+            defaultMessage='Edit'
           />
         }
         onClick={ this.showEditDialog }
@@ -292,7 +292,7 @@ class Contract extends Component {
         label={
           <FormattedMessage
             id='contract.buttons.forget'
-            defaultMessage='forget'
+            defaultMessage='Forget'
           />
         }
         onClick={ this.showDeleteDialog }
@@ -303,7 +303,7 @@ class Contract extends Component {
         label={
           <FormattedMessage
             id='contract.buttons.details'
-            defaultMessage='details'
+            defaultMessage='Details'
           />
         }
         onClick={ this.showDetailsDialog }

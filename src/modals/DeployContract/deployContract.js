@@ -37,7 +37,7 @@ const STEPS = {
     title: (
       <FormattedMessage
         id='deployContract.title.details'
-        defaultMessage='contract details'
+        defaultMessage='Contract details'
       />
     )
   },
@@ -45,7 +45,7 @@ const STEPS = {
     title: (
       <FormattedMessage
         id='deployContract.title.parameters'
-        defaultMessage='contract parameters'
+        defaultMessage='Contract parameters'
       />
     )
   },
@@ -53,7 +53,7 @@ const STEPS = {
     title: (
       <FormattedMessage
         id='deployContract.title.extras'
-        defaultMessage='extra information'
+        defaultMessage='Extra information'
       />
     )
   }
@@ -409,7 +409,7 @@ class DeployContract extends Component {
       : (
         <FormattedMessage
           id='deployContract.owner.noneSelected'
-          defaultMessage='a valid account as the contract owner needs to be selected'
+          defaultMessage='A valid account as the contract owner needs to be selected'
         />
       );
 

@@ -68,13 +68,13 @@ export default class Extras extends Component {
         hint={
           <FormattedMessage
             id='transfer.advanced.data.hint'
-            defaultMessage='the data to pass through with the transaction'
+            defaultMessage='The data to pass through with the transaction'
           />
         }
         label={
           <FormattedMessage
             id='transfer.advanced.data.label'
-            defaultMessage='transaction data'
+            defaultMessage='Transaction data'
           />
         }
         onChange={ this.onEditData }

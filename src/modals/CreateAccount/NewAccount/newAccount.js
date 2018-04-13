@@ -57,13 +57,13 @@ export default class CreateAccount extends Component {
           hint={
             <FormattedMessage
               id='createAccount.newAccount.name.hint'
-              defaultMessage='a descriptive name for the account'
+              defaultMessage='A descriptive name for the account'
             />
           }
           label={
             <FormattedMessage
               id='createAccount.newAccount.name.label'
-              defaultMessage='account name'
+              defaultMessage='Account name'
             />
           }
           onChange={ this.onEditAccountName }
@@ -73,13 +73,13 @@ export default class CreateAccount extends Component {
           hint={
             <FormattedMessage
               id='createAccount.newAccount.hint.hint'
-              defaultMessage='(optional) a hint to help with remembering the password'
+              defaultMessage='(optional) A hint to help with remembering the password'
             />
           }
           label={
             <FormattedMessage
               id='createAccount.newAccount.hint.label'
-              defaultMessage='password hint'
+              defaultMessage='Password hint'
             />
           }
           onChange={ this.onEditPasswordHint }
@@ -91,13 +91,13 @@ export default class CreateAccount extends Component {
               hint={
                 <FormattedMessage
                   id='createAccount.newAccount.password.hint'
-                  defaultMessage='a strong, unique password'
+                  defaultMessage='A strong, unique password'
                 />
               }
               label={
                 <FormattedMessage
                   id='createAccount.newAccount.password.label'
-                  defaultMessage='password'
+                  defaultMessage='Password'
                 />
               }
               onChange={ this.onEditPassword }
@@ -111,13 +111,13 @@ export default class CreateAccount extends Component {
               hint={
                 <FormattedMessage
                   id='createAccount.newAccount.password2.hint'
-                  defaultMessage='verify your password'
+                  defaultMessage='Verify your password'
                 />
               }
               label={
                 <FormattedMessage
                   id='createAccount.newAccount.password2.label'
-                  defaultMessage='password (repeat)'
+                  defaultMessage='Password (repeat)'
                 />
               }
               onChange={ this.onEditPasswordRepeat }

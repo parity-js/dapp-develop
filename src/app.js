@@ -38,18 +38,12 @@ export default class App extends Component {
   render () {
     return (
       <Page
-        // title={
-        //   <FormattedMessage
-        //     id="dapps.develop.title"
-        //     defaultMessage="Contracts"
-        //   />
-        // }
         className = { styles.page }
       >
         <Menu pointing secondary>
           <Menu.Item
             name={WATCHED_CONTRACTS}
-            active={this.props.location.pathname === "/"}
+            active={this.props.location.pathname === "/" || this.props.location.pathname.startsWith("/contracts/")}
           >
             <Link to="/" className={styles.navLink}>
               <FormattedMessage

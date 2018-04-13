@@ -28,7 +28,7 @@ import styles from '../contract.css';
 const TITLE = (
   <FormattedMessage
     id='contract.events.title'
-    defaultMessage='events'
+    defaultMessage='Events'
   />
 );
 

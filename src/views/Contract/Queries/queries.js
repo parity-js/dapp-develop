@@ -65,7 +65,7 @@ export default class Queries extends Component {
         title={
           <FormattedMessage
             id='contract.queries.title'
-            defaultMessage='queries'
+            defaultMessage='Queries'
           />
         }
       >

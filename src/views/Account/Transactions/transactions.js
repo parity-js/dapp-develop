@@ -64,7 +64,7 @@ class Transactions extends Component {
         title={
           <FormattedMessage
             id='account.transactions.title'
-            defaultMessage='transactions'
+            defaultMessage='Transactions'
           />
         }
       >

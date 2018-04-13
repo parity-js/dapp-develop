@@ -202,7 +202,7 @@ class WriteContract extends Component {
           title={
             <FormattedMessage
               id='writeContract.title.saved'
-              defaultMessage='saved @ {timestamp}'
+              defaultMessage='Saved @ {timestamp}'
               vaules={ {
                 timestamp: (new Date(selectedContract.timestamp)).toISOString()
               } }
@@ -303,7 +303,7 @@ class WriteContract extends Component {
       <Editor
         readOnly
         value={ content }
-        maxLines={ 20 }
+        maxLines={ Infinity }
         theme='tomorrow'
       />
     );

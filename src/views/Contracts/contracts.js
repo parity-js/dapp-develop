@@ -37,7 +37,7 @@ const META_SORT = [
     label: (
       <FormattedMessage
         id='contracts.sortOrder.date'
-        defaultMessage='date'
+        defaultMessage='Date'
       />
     )
   },
@@ -46,7 +46,7 @@ const META_SORT = [
     label: (
       <FormattedMessage
         id='contracts.sortOrder.minedBlock'
-        defaultMessage='mined block'
+        defaultMessage='Mined block'
       />
     )
   }

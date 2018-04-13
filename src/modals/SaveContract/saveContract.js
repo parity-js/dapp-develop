@@ -49,7 +49,7 @@ export default class SaveContract extends Component {
         title={
           <FormattedMessage
             id='saveContract.title'
-            defaultMessage='save contract'
+            defaultMessage='Save contract'
           />
         }
       >
@@ -59,13 +59,13 @@ export default class SaveContract extends Component {
               label={
                 <FormattedMessage
                   id='saveContract.name.label'
-                  defaultMessage='contract name'
+                  defaultMessage='Contract name'
                 />
               }
               hint={
                 <FormattedMessage
                   id='saveContract.name.hint'
-                  defaultMessage='choose a name for this contract'
+                  defaultMessage='Choose a name for this contract'
                 />
               }
               value={ name }

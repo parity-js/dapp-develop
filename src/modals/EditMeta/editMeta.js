@@ -59,7 +59,7 @@ class EditMeta extends Component {
         title={
           <FormattedMessage
             id='editMeta.title'
-            defaultMessage='edit metadata'
+            defaultMessage='Edit metadata'
           />
         }
       >
@@ -70,7 +70,7 @@ class EditMeta extends Component {
             label={
               <FormattedMessage
                 id='editMeta.name.label'
-                defaultMessage='name'
+                defaultMessage='Name'
               />
             }
             onSubmit={ this.store.setName }
@@ -80,13 +80,13 @@ class EditMeta extends Component {
             hint={
               <FormattedMessage
                 id='editMeta.description.hint'
-                defaultMessage='description for this address'
+                defaultMessage='Description for this address'
               />
             }
             label={
               <FormattedMessage
                 id='editMeta.description.label'
-                defaultMessage='address description'
+                defaultMessage='Address description'
               />
             }
             value={ description }
@@ -148,7 +148,7 @@ class EditMeta extends Component {
         hint={
           <FormattedMessage
             id='editMeta.passwordHint.hint'
-            defaultMessage='a hint to allow password recovery'
+            defaultMessage='A hint to allow password recovery'
           />
         }
         label={

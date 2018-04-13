@@ -47,13 +47,13 @@ export default class RawKey extends Component {
           hint={
             <FormattedMessage
               id='createAccount.rawKey.private.hint'
-              defaultMessage='the raw hex encoded private key'
+              defaultMessage='The raw hex encoded private key'
             />
           }
           label={
             <FormattedMessage
               id='createAccount.rawKey.private.label'
-              defaultMessage='private key'
+              defaultMessage='Private key'
             />
           }
           onChange={ this.onEditKey }
@@ -64,13 +64,13 @@ export default class RawKey extends Component {
           hint={
             <FormattedMessage
               id='createAccount.rawKey.name.hint'
-              defaultMessage='a descriptive name for the account'
+              defaultMessage='A descriptive name for the account'
             />
           }
           label={
             <FormattedMessage
               id='createAccount.rawKey.name.label'
-              defaultMessage='account name'
+              defaultMessage='Account name'
             />
           }
           onChange={ this.onEditName }
@@ -80,13 +80,13 @@ export default class RawKey extends Component {
           hint={
             <FormattedMessage
               id='createAccount.rawKey.hint.hint'
-              defaultMessage='(optional) a hint to help with remembering the password'
+              defaultMessage='(optional) A hint to help with remembering the password'
             />
           }
           label={
             <FormattedMessage
               id='createAccount.rawKey.hint.label'
-              defaultMessage='password hint'
+              defaultMessage='Password hint'
             />
           }
           onChange={ this.onEditPasswordHint }
@@ -98,13 +98,13 @@ export default class RawKey extends Component {
               hint={
                 <FormattedMessage
                   id='createAccount.rawKey.password.hint'
-                  defaultMessage='a strong, unique password'
+                  defaultMessage='A strong, unique password'
                 />
               }
               label={
                 <FormattedMessage
                   id='createAccount.rawKey.password.label'
-                  defaultMessage='password'
+                  defaultMessage='Password'
                 />
               }
               onChange={ this.onEditPassword }
@@ -118,13 +118,13 @@ export default class RawKey extends Component {
               hint={
                 <FormattedMessage
                   id='createAccount.rawKey.password2.hint'
-                  defaultMessage='verify your password'
+                  defaultMessage='Verify your password'
                 />
               }
               label={
                 <FormattedMessage
                   id='createAccount.rawKey.password2.label'
-                  defaultMessage='password (repeat)'
+                  defaultMessage='Password (repeat)'
                 />
               }
               onChange={ this.onEditPasswordRepeat }

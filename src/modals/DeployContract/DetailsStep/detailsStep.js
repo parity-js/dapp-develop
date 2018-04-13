@@ -107,13 +107,13 @@ export default class DetailsStep extends Component {
           hint={
             <FormattedMessage
               id='deployContract.details.name.hint'
-              defaultMessage='a name for the deployed contract'
+              defaultMessage='A name for the deployed contract'
             />
           }
           label={
             <FormattedMessage
               id='deployContract.details.name.label'
-              defaultMessage='contract name'
+              defaultMessage='Contract name'
             />
           }
           onChange={ this.onNameChange }
@@ -125,13 +125,13 @@ export default class DetailsStep extends Component {
           hint={
             <FormattedMessage
               id='deployContract.details.description.hint'
-              defaultMessage='a description for the contract'
+              defaultMessage='A description for the contract'
             />
           }
           label={
             <FormattedMessage
               id='deployContract.details.description.label'
-              defaultMessage='contract description (optional)'
+              defaultMessage='Contract description (optional)'
             />
           }
           onChange={ this.onDescriptionChange }
@@ -144,13 +144,13 @@ export default class DetailsStep extends Component {
           hint={
             <FormattedMessage
               id='deployContract.details.address.hint'
-              defaultMessage='the owner account for this contract'
+              defaultMessage='The owner account for this contract'
             />
           }
           label={
             <FormattedMessage
               id='deployContract.details.address.label'
-              defaultMessage='from account (contract owner)'
+              defaultMessage='From account (contract owner)'
             />
           }
           onChange={ this.onFromAddressChange }
@@ -164,13 +164,13 @@ export default class DetailsStep extends Component {
           hint={
             <FormattedMessage
               id='deployContract.details.abi.hint'
-              defaultMessage='the abi of the contract to deploy or solc combined-output'
+              defaultMessage='The abi of the contract to deploy or solc combined-output'
             />
           }
           label={
             <FormattedMessage
               id='deployContract.details.abi.label'
-              defaultMessage='abi / solc combined-output'
+              defaultMessage='Abi / solc combined-output'
             />
           }
           onChange={ this.onSolcChange }
@@ -183,13 +183,13 @@ export default class DetailsStep extends Component {
           hint={
             <FormattedMessage
               id='deployContract.details.code.hint'
-              defaultMessage='the compiled code of the contract to deploy'
+              defaultMessage='The compiled code of the contract to deploy'
             />
           }
           label={
             <FormattedMessage
               id='deployContract.details.code.label'
-              defaultMessage='code'
+              defaultMessage='Code'
             />
           }
           onSubmit={ this.onCodeChange }
@@ -205,7 +205,7 @@ export default class DetailsStep extends Component {
             label={
               <FormattedMessage
                 id='deployContract.details.advanced.label'
-                defaultMessage='advanced sending options'
+                defaultMessage='Advanced sending options'
               />
             }
             onClick={ this.onCheckExtras }
@@ -240,13 +240,13 @@ export default class DetailsStep extends Component {
         hint={
           <FormattedMessage
             id='deployContract.details.amount.hint'
-            defaultMessage='the amount to transfer to the contract'
+            defaultMessage='The amount to transfer to the contract'
           />
         }
         label={
           <FormattedMessage
             id='deployContract.details.amount.label'
-            defaultMessage='amount to transfer (in {tag})'
+            defaultMessage='Amount to transfer (in {tag})'
             values={ {
               tag: 'ETH'
             } }
@@ -281,7 +281,7 @@ export default class DetailsStep extends Component {
         label={
           <FormattedMessage
             id='deployContract.details.contract.label'
-            defaultMessage='select a contract'
+            defaultMessage='Select a contract'
           />
         }
         onChange={ this.onContractChange }

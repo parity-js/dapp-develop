@@ -37,13 +37,13 @@ const TITLES = {
   transfer: (
     <FormattedMessage
       id='executeContract.steps.transfer'
-      defaultMessage='function details'
+      defaultMessage='Function details'
     />
   ),
   advanced: (
     <FormattedMessage
       id='executeContract.steps.advanced'
-      defaultMessage='advanced options'
+      defaultMessage='Advanced options'
     />
   )
 };

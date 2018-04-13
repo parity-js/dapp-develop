@@ -62,13 +62,13 @@ export default class AccountDetails extends Component {
                 hint={
                   <FormattedMessage
                     id='createAccount.accountDetails.address.hint'
-                    defaultMessage='the network address for the account'
+                    defaultMessage='The network address for the account'
                   />
                 }
                 label={
                   <FormattedMessage
                     id='createAccount.accountDetails.address.label'
-                    defaultMessage='address'
+                    defaultMessage='Address'
                   />
                 }
                 value={ address }
@@ -100,7 +100,7 @@ export default class AccountDetails extends Component {
           hint={
             <FormattedMessage
               id='createAccount.accountDetails.phrase.hint'
-              defaultMessage='the account recovery phrase'
+              defaultMessage='The account recovery phrase'
             />
           }
           label={
@@ -123,13 +123,13 @@ export default class AccountDetails extends Component {
     const hint = (
       <FormattedMessage
         id='createAccount.accountDetails.phrase.hint'
-        defaultMessage='the account recovery phrase'
+        defaultMessage='The account recovery phrase'
       />
     );
     const label = (
       <FormattedMessage
         id='createAccount.accountDetails.phrase.label'
-        defaultMessage='owner recovery phrase'
+        defaultMessage='Owner recovery phrase'
       />
     );
 

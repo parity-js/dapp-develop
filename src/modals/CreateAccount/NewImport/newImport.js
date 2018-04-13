@@ -43,13 +43,13 @@ export default class NewImport extends Component {
           hint={
             <FormattedMessage
               id='createAccount.newImport.name.hint'
-              defaultMessage='a descriptive name for the account'
+              defaultMessage='A descriptive name for the account'
             />
           }
           label={
             <FormattedMessage
               id='createAccount.newImport.name.label'
-              defaultMessage='account name'
+              defaultMessage='Account name'
             />
           }
           onChange={ this.onEditName }
@@ -59,13 +59,13 @@ export default class NewImport extends Component {
           hint={
             <FormattedMessage
               id='createAccount.newImport.hint.hint'
-              defaultMessage='(optional) a hint to help with remembering the password'
+              defaultMessage='(optional) A hint to help with remembering the password'
             />
           }
           label={
             <FormattedMessage
               id='createAccount.newImport.hint.label'
-              defaultMessage='password hint'
+              defaultMessage='Password hint'
             />
           }
           onChange={ this.onEditpasswordHint }
@@ -77,13 +77,13 @@ export default class NewImport extends Component {
               hint={
                 <FormattedMessage
                   id='createAccount.newImport.password.hint'
-                  defaultMessage='the password to unlock the wallet'
+                  defaultMessage='The password to unlock the wallet'
                 />
               }
               label={
                 <FormattedMessage
                   id='createAccount.newImport.password.label'
-                  defaultMessage='password'
+                  defaultMessage='Password'
                 />
               }
               type='password'
@@ -112,13 +112,13 @@ export default class NewImport extends Component {
           hint={
             <FormattedMessage
               id='createAccount.newImport.file.hint'
-              defaultMessage='the wallet file for import'
+              defaultMessage='The wallet file for import'
             />
           }
           label={
             <FormattedMessage
               id='createAccount.newImport.file.label'
-              defaultMessage='wallet file'
+              defaultMessage='Wallet file'
             />
           }
           value={ walletFile }
