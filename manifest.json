@@ -1,0 +1,9 @@
+{
+    "id": "dapp-develop",
+    "name": "Develop Contracts",
+    "description": "Watch, develop and deploy contracts",
+    "author": "Parity Team <admin@parity.io>",
+    "version": "VERSION",
+    "iconUrl": "icon.png",
+    "localUrl": "http://localhost:3001"
+}
