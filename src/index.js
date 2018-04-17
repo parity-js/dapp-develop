@@ -19,8 +19,6 @@ import 'whatwg-fetch';
 import es6Promise from 'es6-promise';
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 
 import { hashHistory } from 'react-router';
 
@@ -35,15 +33,9 @@ import MainApplication from './main';
 import { loadSender, patchApi } from '@parity/shared/lib/util/tx';
 import { setApi } from '@parity/shared/lib/redux/providers/apiActions';
 
+import api from './api';
+
 es6Promise.polyfill();
-
-const ethereumProvider = window.ethereum;
-
-if (!ethereumProvider) {
-  throw new Error('Unable to locate EthereumProvider, object not attached');
-}
-
-const api = new Api(ethereumProvider);
 
 patchApi(api); // @TODO Not sure what those are for
 loadSender(api);
@@ -54,29 +46,14 @@ const store = initStore(api, hashHistory);
 store.dispatch({ type: 'initAll', api });
 store.dispatch(setApi(api));
 
-ReactDOM.render(
-  <AppContainer>
-    <ContextProvider api={ api } store={ store }>
-      <MainApplication
-        routerHistory={ hashHistory }
-      />
-    </ContextProvider>
-  </AppContainer>,
-  document.querySelector('#root')
-);
-
-if (module.hot) {
-  module.hot.accept('./main.js', () => {
-    require('./main.js');
-    ReactDOM.render(
-      <AppContainer>
-        <ContextProvider api={ api } store={ store }>
-          <MainApplication
-            routerHistory={ hashHistory }
-          />
-        </ContextProvider>
-      </AppContainer>,
-      document.querySelector('#root')
+export default class App extends React.Component {
+  render () {
+    return (
+      <ContextProvider api={ api } store={ store }>
+        <MainApplication
+          routerHistory={ hashHistory }
+        />
+      </ContextProvider>
     );
-  });
+  }
 }
