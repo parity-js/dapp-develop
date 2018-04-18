@@ -24,7 +24,7 @@ import { bindActionCreators } from 'redux';
 import { ConfirmDialog, IdentityIcon, IdentityName } from '@parity/ui/lib';
 import { newError } from '@parity/shared/lib/redux/actions';
 
-import styles from '../address.css';
+import styles from './delete.css';
 
 class Delete extends Component {
   static contextTypes = {

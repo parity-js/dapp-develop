@@ -14,14 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-// import HistoryStore from '@parity/shared/lib/mobx/historyStore';
-/// import { Accounts, Account, Addresses, Address, Application, Contract, Contracts, Home, Settings, SettingsBackground, SettingsParity, SettingsProxy, SettingsViews, Status, Vaults, Wallet, Web, WriteContract } from '~/views';
 import { Contract, Contracts, WriteContract } from '~/views';
 import App from '~/app';
-// import builtinDapps from '~/views/Dapps/builtin.json';
-
-// const accountsHistory = HistoryStore.get('accounts');
-// const dappsHistory = HistoryStore.get('dapps');
 
 const routes = [
   {
@@ -34,23 +28,5 @@ const routes = [
     ]
   }
 ];
-
-// TODO : use ES6 imports when supported
-// if (process.env.NODE_ENV !== 'production') {
-//   const Playground = require('./playground').default;
-
-//   childRoutes.push({
-//     path: 'playground',
-//     component: Playground
-//   });
-// }
-// TODO RE-ADD ^
-// TODO what is playground?
-
-// routes.push({
-//   path: '/',
-//   component: Application,
-//   childRoutes
-// });
 
 export default routes;

@@ -20,26 +20,26 @@ import es6Promise from 'es6-promise';
 
 import React from 'react';
 
-import { hashHistory } from 'react-router';
-
-import Api from '@parity/api';
+import { Router, hashHistory } from 'react-router';
 
 // import ContractInstances from '@parity/shared/lib/contracts';
 
 import { initStore } from '@parity/shared/lib/redux';
 import ContextProvider from '@parity/ui/lib/ContextProvider';
-import MainApplication from './main';
 
 import { loadSender, patchApi } from '@parity/shared/lib/util/tx';
 import { setApi } from '@parity/shared/lib/redux/providers/apiActions';
-
 import api from './api';
+
+import styles from './reset.css';
+
+import routes from './routes';
 
 es6Promise.polyfill();
 
 patchApi(api); // @TODO Not sure what those are for
 loadSender(api);
-// ContractInstances.create(api);
+// ContractInstances.get(api);
 
 const store = initStore(api, hashHistory);
 
@@ -50,8 +50,10 @@ export default class App extends React.Component {
   render () {
     return (
       <ContextProvider api={ api } store={ store }>
-        <MainApplication
-          routerHistory={ hashHistory }
+        <Router
+          className={ styles.reset }
+          history={ hashHistory }
+          routes={ routes }
         />
       </ContextProvider>
     );

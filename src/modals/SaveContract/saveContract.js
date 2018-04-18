@@ -21,7 +21,7 @@ import { FormattedMessage } from 'react-intl';
 import { Button, Form, Input, Portal } from '@parity/ui/lib';
 import Editor from '@parity/ui/lib/Editor';
 import { CancelIcon, SaveIcon } from '@parity/ui/lib/Icons';
-import { ERRORS, validateName } from '~/util/validation';
+import { ERRORS, validateName } from '@parity/shared/lib/util/validation';
 
 import styles from './saveContract.css';
 
