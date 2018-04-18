@@ -226,7 +226,7 @@ export default class LoadContract extends Component {
           key='delete'
           icon='delete'
           onClick={ onDelete }
-        />
+          /> // eslint-disable-line
         : null}
 
       {description || (

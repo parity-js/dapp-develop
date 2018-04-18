@@ -50,11 +50,14 @@ export default class App extends React.Component {
   render () {
     return (
       <ContextProvider api={ api } store={ store }>
-        <Router
+        <div
           className={ styles.reset }
-          history={ hashHistory }
-          routes={ routes }
-        />
+        >
+          <Router
+            history={ hashHistory }
+            routes={ routes }
+          />
+        </div>
       </ContextProvider>
     );
   }

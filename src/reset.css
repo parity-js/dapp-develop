@@ -106,3 +106,7 @@
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+:root :global(.parity-react-scripts--hmr-status) {
+  display: none;
+}

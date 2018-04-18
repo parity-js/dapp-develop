@@ -32,7 +32,6 @@ class Delete extends Component {
   };
 
   static propTypes = {
-    address: PropTypes.string,
     account: PropTypes.object,
     confirmMessage: PropTypes.node,
     visible: PropTypes.bool,

@@ -30,9 +30,7 @@ export default class Extras extends Component {
     hideData: PropTypes.bool,
     gasStore: PropTypes.object.isRequired,
     isEth: PropTypes.bool,
-    onChange: PropTypes.func,
-    total: PropTypes.string,
-    totalError: PropTypes.string
+    onChange: PropTypes.func
   };
 
   static defaultProps = {
