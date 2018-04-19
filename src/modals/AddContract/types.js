@@ -1,4 +1,4 @@
-// Copyright 2015-2017 Parity Technologies (UK) Ltd.
+// Copyright 2015-2018 Parity Technologies (UK) Ltd.
 // This file is part of Parity.
 
 // Parity is free software: you can redistribute it and/or modify
@@ -51,17 +51,17 @@ const ABI_TYPES = [
     description: (
       <FormattedMessage
         id='addContract.abiType.multisigWallet.description'
-        defaultMessage='Ethereum Multisig contract {link}'
-        values={ {
-          link: (
-            <a href='https://github.com/ethereum/dapp-bin/blob/master/wallet/wallet.sol' target='_blank'>
-              <FormattedMessage
-                id='addContract.abiType.multisigWallet.link'
-                defaultMessage='See contract code'
-              />
-            </a>
-          )
-        } }
+        defaultMessage='Ethereum Multisig contract' // {link}
+        // values={ {
+        //   link: (
+        //     <a href='https://github.com/ethereum/dapp-bin/blob/master/wallet/wallet.sol' target='_blank'>
+        //       <FormattedMessage
+        //         id='addContract.abiType.multisigWallet.link'
+        //         defaultMessage='See contract code'
+        //       />
+        //     </a>
+        //   )
+        // } }
       />
     ),
     label: (

@@ -1,4 +1,4 @@
-// Copyright 2015-2017 Parity Technologies (UK) Ltd.
+// Copyright 2015-2018 Parity Technologies (UK) Ltd.
 // This file is part of Parity.
 
 // Parity is free software: you can redistribute it and/or modify
@@ -20,6 +20,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import styles from './addContract.css';
 
 import { newError } from '@parity/shared/lib/redux/actions';
 import { Button, Form, Input, InputAddress, Portal, RadioButtons } from '@parity/ui/lib';
@@ -85,6 +86,7 @@ class AddContract extends Component {
 
     return (
       <RadioButtons
+        className={ styles.radio }
         name='contractType'
         value={ abiTypeIndex }
         values={ abiTypes.map((abiType, i) => ({ ...abiType, key: i })) }
