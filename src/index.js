@@ -22,7 +22,7 @@ import React from 'react';
 
 import { Router, hashHistory } from 'react-router';
 
-// import ContractInstances from '@parity/shared/lib/contracts';
+import ContractInstances from '@parity/shared/lib/contracts';
 
 import { initStore } from '@parity/shared/lib/redux';
 import ContextProvider from '@parity/ui/lib/ContextProvider';
@@ -37,9 +37,10 @@ import routes from './routes';
 
 es6Promise.polyfill();
 
-patchApi(api); // @TODO Not sure what those are for
+patchApi(api);
 loadSender(api);
-// ContractInstances.get(api);
+
+ContractInstances.get(api);
 
 const store = initStore(api, hashHistory);
 
