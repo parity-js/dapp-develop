@@ -1,6 +1,9 @@
 .build
 .happypack
 
+# Use yarn intead
+package-lock.json
+
 # Logs
 logs
 *.log
