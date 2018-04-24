@@ -35,6 +35,10 @@ import styles from './reset.css';
 
 import routes from './routes';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
+
 es6Promise.polyfill();
 
 patchApi(api);
