@@ -32,43 +32,9 @@
 }
 
 .container label {
-  margin-top: -.1em;
+  margin-top: -0.1em;
   display: block;
   color: #aaa !important;
-}
-
-.vMethods {
-  flex-direction: column;
-  width: 33.3333%;
-  margin-right: 25px !important;
-  width: 290px;
-}
-
-.hMethods {
-  flex: 1;
-  flex-direction: row;
-  width: 66.6666%;
-  margin-top: 0 !important;
-
-  .methodTitle {
-    margin-bottom: .5em;
-  }
-
-  label {
-    margin-top: 1em !important;
-  }
-}
-
-.hMethods .container {
-  width: calc(50% - 1em);
-}
-
-
-.typedInput > div > div { margin-top: .8em !important; }
-
-.typedInput input {
-  opacity: 1 !important;
-  color: rgba(0, 0, 0, .85) !important; /* @TODO UPSTREAM */
 }
 
 .methodTitle {
@@ -92,6 +58,38 @@
   & > div {
     width: 100%;
   }
+}
+
+.vMethods {
+  flex-direction: column;
+  margin-right: 25px !important;
+  width: 290px;
+}
+
+.hMethods {
+  flex: 1;
+  flex-direction: row;
+  width: 66.6666%;
+  margin-top: 0 !important;
+
+  .methodTitle {
+    margin-bottom: 0.5em;
+  }
+
+  label {
+    margin-top: 1em !important;
+  }
+}
+
+.hMethods .container {
+  width: calc(50% - 1em);
+}
+
+.typedInput > div > div { margin-top: 0.8em !important; }
+
+.typedInput input {
+  opacity: 1 !important;
+  color: rgba(0, 0, 0, 0.85) !important; /* @TODO UPSTREAM */
 }
 
 .queryValue {

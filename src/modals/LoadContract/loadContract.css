@@ -22,7 +22,8 @@
   float: right;
   position: relative;
   top: -12px;
-  opacity: .8;
+  opacity: 0.8;
+
   &:hover {
     opacity: 1;
   }
@@ -39,7 +40,6 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-
     margin: 0;
     font-size: 1.2em;
   }

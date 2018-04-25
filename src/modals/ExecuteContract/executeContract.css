@@ -53,7 +53,7 @@
   flex-wrap: wrap;
   position: relative;
 
-  &>div {
+  & > div {
     flex: 0 1 50%;
     width: 50%;
     position: relative;

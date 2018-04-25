@@ -33,7 +33,7 @@
       margin-left: 0.5em;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: rgba(0, 0, 0, .85);
+      color: rgba(0, 0, 0, 0.85);
     }
   }
 
@@ -64,7 +64,6 @@
     .ethBalances, .allBalances {
       margin-top: 0;
     }
-
   }
 
   .overlay {
@@ -84,7 +83,7 @@
   }
 
   .tags {
-    color: rgba(0, 0, 0, .85);
+    color: rgba(0, 0, 0, 0.85);
   }
 
   &:not(:hover) {
@@ -143,9 +142,8 @@
   }
 
   .mainLink h3 {
-    color: rgba(0, 0, 0, .85);
+    color: rgba(0, 0, 0, 0.85);
     padding: 0;
     margin-bottom: 0;
   }
-
 }
