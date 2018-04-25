@@ -38,7 +38,6 @@ export default class DetailsStep extends Component {
     onAmountChange: PropTypes.func.isRequired,
     onCodeChange: PropTypes.func.isRequired,
     onDescriptionChange: PropTypes.func.isRequired,
-    onExtrasChange: PropTypes.func.isRequired,
     onFromAddressChange: PropTypes.func.isRequired,
     onInputsChange: PropTypes.func.isRequired,
     onNameChange: PropTypes.func.isRequired,
@@ -52,7 +51,6 @@ export default class DetailsStep extends Component {
     codeError: PropTypes.string,
     description: PropTypes.string,
     descriptionError: PropTypes.string,
-    extras: PropTypes.bool,
     fromAddress: PropTypes.string,
     fromAddressError: PropTypes.string,
     name: PropTypes.string,
@@ -61,7 +59,6 @@ export default class DetailsStep extends Component {
   };
 
   static defaultProps = {
-    extras: false,
     readOnly: false
   };
 
@@ -92,7 +89,7 @@ export default class DetailsStep extends Component {
       fromAddress, fromAddressError,
       name, nameError,
       description, descriptionError,
-      abiError, extras,
+      abiError,
       code, codeError
     } = this.props;
 
@@ -198,20 +195,6 @@ export default class DetailsStep extends Component {
         />
 
         { this.renderValueInput() }
-
-        <div>
-          <Checkbox
-            checked={ extras }
-            label={
-              <FormattedMessage
-                id='deployContract.details.advanced.label'
-                defaultMessage='Advanced sending options'
-              />
-            }
-            onClick={ this.onCheckExtras }
-            style={ CHECK_STYLE }
-          />
-        </div>
 
       </Form>
     );
@@ -360,10 +343,6 @@ export default class DetailsStep extends Component {
     const { onAmountChange } = this.props;
 
     onAmountChange(value);
-  }
-
-  onCheckExtras = () => {
-    this.props.onExtrasChange(!this.props.extras);
   }
 
   onAbiChange = (abi) => {

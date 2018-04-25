@@ -30,7 +30,6 @@ import { setRequest } from '@parity/shared/lib/redux/providers/requestsActions';
 
 import DetailsStep from './DetailsStep';
 import ParametersStep from './ParametersStep';
-import Extras from '../Transfer/Extras';
 
 const STEPS = {
   CONTRACT_DETAILS: {
@@ -46,14 +45,6 @@ const STEPS = {
       <FormattedMessage
         id='deployContract.title.parameters'
         defaultMessage='Contract parameters'
-      />
-    )
-  },
-  EXTRAS: {
-    title: (
-      <FormattedMessage
-        id='deployContract.title.extras'
-        defaultMessage='Extra information'
       />
     )
   }
@@ -94,7 +85,6 @@ class DeployContract extends Component {
     codeError: ERRORS.invalidCode,
     description: '',
     descriptionError: null,
-    extras: false,
     fromAddress: getSender() || Object.keys(this.props.accounts)[0],
     fromAddressError: null,
     name: '',
@@ -144,10 +134,6 @@ class DeployContract extends Component {
       .filter((k) => {
         if (k === 'CONTRACT_PARAMETERS') {
           return inputs.length > 0;
-        }
-
-        if (k === 'EXTRAS') {
-          return this.state.extras;
         }
 
         return true;
@@ -260,26 +246,17 @@ class DeployContract extends Component {
     );
 
     const hasParameters = this.state.inputs.length > 0;
-    const showExtras = this.state.extras;
 
     switch (step) {
       case 'CONTRACT_DETAILS':
         return [
           cancelBtn,
-          hasParameters || showExtras
+          hasParameters
             ? nextButton
             : createButton
         ];
 
       case 'CONTRACT_PARAMETERS':
-        return [
-          cancelBtn,
-          showExtras
-            ? nextButton
-            : createButton
-        ];
-
-      case 'EXTRAS':
         return [
           cancelBtn,
           createButton
@@ -298,7 +275,6 @@ class DeployContract extends Component {
             { ...this.state }
             accounts={ accounts }
             onAmountChange={ this.onAmountChange }
-            onExtrasChange={ this.onExtrasChange }
             onFromAddressChange={ this.onFromAddressChange }
             onDescriptionChange={ this.onDescriptionChange }
             onNameChange={ this.onNameChange }
@@ -319,24 +295,7 @@ class DeployContract extends Component {
             readOnly={ readOnly }
           />
         );
-
-      case 'EXTRAS':
-        return this.renderExtrasPage();
     }
-  }
-
-  renderExtrasPage () {
-    if (!this.gasStore.histogram) {
-      return null;
-    }
-
-    return (
-      <Extras
-        gasStore={ this.gasStore }
-        hideData
-        isEth
-      />
-    );
   }
 
   estimateGas = () => {
@@ -372,7 +331,7 @@ class DeployContract extends Component {
         return this.onParametersStep();
 
       case 'CONTRACT_PARAMETERS':
-        return this.onExtrasStep();
+        return this.onDeployStart();
 
       default:
         console.warn('wrong call of "onNextStep" from', this.state.step);
@@ -384,14 +343,6 @@ class DeployContract extends Component {
 
     if (inputs.length) {
       return this.setState({ step: 'CONTRACT_PARAMETERS' });
-    }
-
-    return this.onExtrasStep();
-  }
-
-  onExtrasStep = () => {
-    if (this.state.extras) {
-      return this.setState({ step: 'EXTRAS' });
     }
 
     return this.onDeployStart();
@@ -446,10 +397,6 @@ class DeployContract extends Component {
 
     this.gasStore.setEthValue(nextAmountValue);
     this.setState({ amount, amountValue: nextAmountValue, amountError: numberError }, this.estimateGas);
-  }
-
-  onExtrasChange = (extras) => {
-    this.setState({ extras });
   }
 
   onDeployStart = () => {

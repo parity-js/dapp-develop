@@ -22,13 +22,12 @@ import { connect } from 'react-redux';
 
 import { toWei } from '@parity/api/lib/util/wei';
 import { Button, GasPriceEditor, IdentityIcon, Portal, Warning } from '@parity/ui/lib';
-import { CancelIcon, NextIcon, PrevIcon } from '@parity/ui/lib/Icons';
+import { CancelIcon } from '@parity/ui/lib/Icons';
 import { MAX_GAS_ESTIMATION } from '@parity/shared/lib/util/constants';
 import { validateAddress, validateUint } from '@parity/shared/lib/util/validation';
 import { parseAbiType } from '@parity/shared/lib/util/abi';
 import { setSender } from '@parity/shared/lib/util/tx';
 
-import AdvancedStep from './AdvancedStep';
 import DetailsStep from './DetailsStep';
 
 const STEP_DETAILS = 0;
@@ -39,16 +38,9 @@ const TITLES = {
       id='executeContract.steps.transfer'
       defaultMessage='Function details'
     />
-  ),
-  advanced: (
-    <FormattedMessage
-      id='executeContract.steps.advanced'
-      defaultMessage='Advanced options'
-    />
   )
 };
 const STAGES_BASIC = [TITLES.transfer];
-const STAGES_ADVANCED = [TITLES.transfer, TITLES.advanced];
 
 @observer
 class ExecuteContract extends Component {
@@ -69,7 +61,6 @@ class ExecuteContract extends Component {
   gasStore = new GasPriceEditor.Store(this.context.api, { gasLimit: this.props.gasLimit });
 
   state = {
-    advancedOptions: false,
     amount: '0',
     amountError: null,
     fromAddressError: null,
@@ -96,8 +87,8 @@ class ExecuteContract extends Component {
   }
 
   render () {
-    const { advancedOptions, step } = this.state;
-    const steps = advancedOptions ? STAGES_ADVANCED : STAGES_BASIC;
+    const { step } = this.state;
+    const steps = STAGES_BASIC;
 
     return (
       <Portal
@@ -127,7 +118,7 @@ class ExecuteContract extends Component {
 
   renderDialogActions () {
     const { fromAddress } = this.props;
-    const { advancedOptions, step, fromAddressError, valuesError } = this.state;
+    const { fromAddressError, valuesError } = this.state;
     const hasError = !!(fromAddressError || valuesError.find((error) => error));
 
     const cancelBtn = (
@@ -157,69 +148,27 @@ class ExecuteContract extends Component {
         onClick={ this.postTransaction }
       />
     );
-    const nextBtn = (
-      <Button
-        key='nextStep'
-        label={
-          <FormattedMessage
-            id='executeContract.button.next'
-            defaultMessage='Next'
-          />
-        }
-        icon={ <NextIcon /> }
-        onClick={ this.onNextClick }
-      />
-    );
-    const prevBtn = (
-      <Button
-        key='prevStep'
-        label={
-          <FormattedMessage
-            id='executeContract.button.prev'
-            defaultMessage='Previous'
-          />
-        }
-        icon={ <PrevIcon /> }
-        onClick={ this.onPrevClick }
-      />
-    );
-
-    if (step === STEP_DETAILS) {
-      return [
-        cancelBtn,
-        advancedOptions ? nextBtn : postBtn
-      ];
-    }
 
     return [
       cancelBtn,
-      prevBtn,
       postBtn
     ];
   }
 
   renderStep () {
     const { accounts, contract, fromAddress, onFromAddressChange } = this.props;
-    const { step } = this.state;
-
-    if (step === STEP_DETAILS) {
-      return (
-        <DetailsStep
-          { ...this.state }
-          accounts={ accounts }
-          contract={ contract }
-          fromAddress={ fromAddress }
-          onAmountChange={ this.onAmountChange }
-          onFromAddressChange={ onFromAddressChange }
-          onFuncChange={ this.onFuncChange }
-          onAdvancedClick={ this.onAdvancedClick }
-          onValueChange={ this.onValueChange }
-        />
-      );
-    }
 
     return (
-      <AdvancedStep gasStore={ this.gasStore } />
+      <DetailsStep
+        { ...this.state }
+        accounts={ accounts }
+        contract={ contract }
+        fromAddress={ fromAddress }
+        onAmountChange={ this.onAmountChange }
+        onFromAddressChange={ onFromAddressChange }
+        onFuncChange={ this.onFuncChange }
+        onValueChange={ this.onValueChange }
+      />
     );
   }
 
@@ -312,24 +261,6 @@ class ExecuteContract extends Component {
     setSender(fromAddress);
     func.postTransaction(options, values);
     this.onClose();
-  }
-
-  onAdvancedClick = () => {
-    this.setState({
-      advancedOptions: !this.state.advancedOptions
-    });
-  }
-
-  onNextClick = () => {
-    this.setState({
-      step: this.state.step + 1
-    });
-  }
-
-  onPrevClick = () => {
-    this.setState({
-      step: this.state.step - 1
-    });
   }
 
   onClose = () => {

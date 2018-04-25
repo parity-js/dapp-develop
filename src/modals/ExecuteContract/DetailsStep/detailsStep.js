@@ -31,7 +31,6 @@ const CHECK_STYLE = {
 
 export default class DetailsStep extends Component {
   static propTypes = {
-    advancedOptions: PropTypes.bool,
     accounts: PropTypes.object.isRequired,
     amount: PropTypes.string,
     amountError: PropTypes.string,
@@ -40,7 +39,6 @@ export default class DetailsStep extends Component {
     fromAddressError: PropTypes.string,
     func: PropTypes.object,
     funcError: PropTypes.string,
-    onAdvancedClick: PropTypes.func,
     onAmountChange: PropTypes.func.isRequired,
     onFromAddressChange: PropTypes.func.isRequired,
     onFuncChange: PropTypes.func,
@@ -50,7 +48,7 @@ export default class DetailsStep extends Component {
   }
 
   render () {
-    const { accounts, advancedOptions, amount, amountError, fromAddress, fromAddressError, onAdvancedClick, onAmountChange, onFromAddressChange } = this.props;
+    const { accounts, amount, amountError, fromAddress, fromAddressError, onAmountChange, onFromAddressChange } = this.props;
 
     return (
       <Form>
@@ -92,19 +90,6 @@ export default class DetailsStep extends Component {
               }
               onSubmit={ onAmountChange }
               value={ amount }
-            />
-          </div>
-          <div>
-            <Checkbox
-              checked={ advancedOptions }
-              label={
-                <FormattedMessage
-                  id='executeContract.details.advancedCheck.label'
-                  defaultMessage='Advanced sending options'
-                />
-              }
-              onClick={ onAdvancedClick }
-              style={ CHECK_STYLE }
             />
           </div>
         </div>
