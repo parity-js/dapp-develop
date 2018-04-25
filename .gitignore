@@ -1,5 +1,6 @@
 .build
 .happypack
+yarn.lock
 
 # Use yarn intead
 package-lock.json

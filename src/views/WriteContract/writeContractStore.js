@@ -282,9 +282,9 @@ export default class WriteContractStore {
     this.showSaveModal = false;
   }
 
-  @action handleSelectContract = (_, index, value) => {
-    this.contractIndex = value;
-    this.contract = this.contracts[Object.keys(this.contracts)[value]];
+  @action handleSelectContract = (_, index) => {
+    this.contractIndex = index;
+    this.contract = this.contracts[Object.keys(this.contracts)[index]];
   }
 
   compile = (data) => {

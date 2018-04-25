@@ -1,2 +1,2 @@
 # dapp-develop
-Watch and develop contracts
+Watch, develop and deploy contracts
