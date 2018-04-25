@@ -19,13 +19,9 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { AddressSelect, Form, Input, Checkbox, Dropdown } from '@parity/ui/lib';
+import { AddressSelect, Form, Input, Dropdown } from '@parity/ui/lib';
 import { validateAbi } from '@parity/shared/lib/util/validation';
 import { parseAbiType } from '@parity/shared/lib/util/abi';
-
-const CHECK_STYLE = {
-  marginTop: '1em'
-};
 
 export default class DetailsStep extends Component {
   static contextTypes = {

@@ -22,7 +22,7 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { Button, GasPriceEditor, IdentityIcon, Portal, Warning } from '@parity/ui/lib';
+import { Button, GasPriceEditor, IdentityIcon, Portal, Title, Warning } from '@parity/ui/lib';
 import { CancelIcon } from '@parity/ui/lib/Icons';
 import { ERRORS, validateAbi, validateCode, validateName, validatePositiveNumber } from '@parity/shared/lib/util/validation';
 import { deploy, deployEstimateGas, getSender, loadSender, setSender } from '@parity/shared/lib/util/tx';
@@ -60,6 +60,7 @@ class DeployContract extends Component {
   static propTypes = {
     accounts: PropTypes.object.isRequired,
     abi: PropTypes.string,
+    asModal: PropTypes.bool,
     code: PropTypes.string,
     gasLimit: PropTypes.object.isRequired,
     onClose: PropTypes.func.isRequired,
@@ -69,6 +70,7 @@ class DeployContract extends Component {
   };
 
   static defaultProps = {
+    asModal: true,
     readOnly: false,
     source: ''
   };
@@ -129,6 +131,7 @@ class DeployContract extends Component {
 
   render () {
     const { step, inputs } = this.state;
+    const { asModal } = this.props;
 
     const realStepKeys = Object.keys(STEPS)
       .filter((k) => {
@@ -141,6 +144,22 @@ class DeployContract extends Component {
 
     const realStep = realStepKeys.findIndex((k) => k === step);
     const realSteps = realStepKeys.map((k) => STEPS[k]);
+
+    if (!asModal) {
+      return (
+        <React.Fragment>
+          <Title
+            activeStep={ realStep }
+            steps={ realSteps.map((s) => s.title) }
+          />
+
+          { this.renderExceptionWarning() }
+          { this.renderStep() }
+
+          { this.renderDialogActions() }
+        </React.Fragment>
+      );
+    }
 
     return (
       <Portal
@@ -172,6 +191,7 @@ class DeployContract extends Component {
 
   renderDialogActions () {
     const { deployError, abiError, amountError, codeError, nameError, descriptionError, fromAddressError, fromAddress, step } = this.state;
+    const { asModal } = this.props;
     const isValid = !nameError && !fromAddressError && !descriptionError && !abiError && !codeError && !amountError;
 
     const cancelBtn = (
@@ -203,11 +223,14 @@ class DeployContract extends Component {
     );
 
     if (deployError) {
-      return closeBtn;
+      return asModal
+        ? closeBtn
+        : null;
     }
 
     const createButton = (
       <Button
+        disabled={ !isValid }
         icon={
           <IdentityIcon
             address={ fromAddress }
@@ -250,7 +273,9 @@ class DeployContract extends Component {
     switch (step) {
       case 'CONTRACT_DETAILS':
         return [
-          cancelBtn,
+          asModal
+            ? cancelBtn
+            : null,
           hasParameters
             ? nextButton
             : createButton
@@ -258,7 +283,9 @@ class DeployContract extends Component {
 
       case 'CONTRACT_PARAMETERS':
         return [
-          cancelBtn,
+          asModal
+            ? cancelBtn
+            : null,
           createButton
         ];
     }

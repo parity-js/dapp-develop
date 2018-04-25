@@ -14,7 +14,4 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-export Contract from './Contract';
-export Contracts from './Contracts';
-export DeployContract from './DeployContract';
-export WriteContract from './WriteContract';
+export default from './deployContract';

@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-import { Contract, Contracts, WriteContract } from '~/views';
+import { Contract, Contracts, DeployContract, WriteContract } from '~/views';
 import App from '~/app';
 
 const routes = [
@@ -24,6 +24,7 @@ const routes = [
     indexRoute: { component: Contracts },
     childRoutes: [
       { path: 'develop', component: WriteContract },
+      { path: 'deploy', component: DeployContract },
       { path: 'contracts/:address', component: Contract }
     ]
   }

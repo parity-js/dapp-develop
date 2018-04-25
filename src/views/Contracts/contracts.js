@@ -23,7 +23,7 @@ import { bindActionCreators } from 'redux';
 import { uniq, isEqual } from 'lodash';
 import styles from './contracts.css';
 
-import { AddContract, DeployContract } from '~/modals';
+import { AddContract } from '~/modals';
 import { setVisibleAccounts } from '@parity/shared/lib/redux/providers/personalActions';
 import { Actionbar, ActionbarSearch, ActionbarSort, Button, Page } from '@parity/ui/lib';
 
@@ -58,14 +58,12 @@ class Contracts extends Component {
   static propTypes = {
     setVisibleAccounts: PropTypes.func.isRequired,
 
-    accounts: PropTypes.object,
     contracts: PropTypes.object,
     hasContracts: PropTypes.bool
   }
 
   state = {
     addContract: false,
-    deployContract: false,
     sortOrder: 'blockNumber:-1',
     searchValues: [],
     searchTokens: []
@@ -103,7 +101,6 @@ class Contracts extends Component {
       <div>
         { this.renderActionbar() }
         { this.renderAddContract() }
-        { this.renderDeployContract() }
         <Page className={ styles.page } >
           <List
             link='contracts'
@@ -161,18 +158,6 @@ class Contracts extends Component {
         }
         onClick={ this.onAddContract }
       />,
-      <Button
-        key='deployContract'
-        icon='send'
-        label={
-          <FormattedMessage
-            id='contracts.buttons.deploy'
-            defaultMessage='Deploy'
-          />
-        }
-        onClick={ this.onDeployContract }
-      />,
-
       this.renderSearchButton(),
       this.renderSortButton()
     ];
@@ -206,22 +191,6 @@ class Contracts extends Component {
     );
   }
 
-  renderDeployContract () {
-    const { accounts } = this.props;
-    const { deployContract } = this.state;
-
-    if (!deployContract) {
-      return null;
-    }
-
-    return (
-      <DeployContract
-        accounts={ accounts }
-        onClose={ this.onDeployContractClose }
-      />
-    );
-  }
-
   handleSortChange = (sortOrder) => {
     this.setState({ sortOrder });
   }
@@ -231,14 +200,6 @@ class Contracts extends Component {
     const newSearchTokens = uniq([].concat(searchTokens, token));
 
     this.setState({ searchTokens: newSearchTokens });
-  }
-
-  onDeployContractClose = () => {
-    this.setState({ deployContract: false });
-  }
-
-  onDeployContract = () => {
-    this.setState({ deployContract: true });
   }
 
   onAddContractClose = () => {
@@ -251,10 +212,9 @@ class Contracts extends Component {
 }
 
 function mapStateToProps (state) {
-  const { accounts, contracts, hasContracts } = state.personal;
+  const { contracts, hasContracts } = state.personal;
 
   return {
-    accounts,
     contracts,
     hasContracts
   };

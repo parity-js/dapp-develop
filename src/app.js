@@ -28,6 +28,7 @@ import { FormattedMessage } from 'react-intl';
 
 const WATCHED_CONTRACTS = 'WATCHED_CONTRACTS';
 const DEVELOP = 'DEVELOP';
+const DEPLOY = 'DEPLOY';
 
 export default class App extends Component {
   static propTypes = {
@@ -60,6 +61,17 @@ export default class App extends Component {
               <FormattedMessage
                 id='dapps.develop.develop'
                 defaultMessage='Develop'
+              />
+            </Link>
+          </Menu.Item>
+          <Menu.Item
+            name={ DEPLOY }
+            active={ this.props.location.pathname === '/deploy' }
+          >
+            <Link to='/deploy' className={ styles.navLink }>
+              <FormattedMessage
+                id='dapps.develop.deploy'
+                defaultMessage='Deploy'
               />
             </Link>
           </Menu.Item>

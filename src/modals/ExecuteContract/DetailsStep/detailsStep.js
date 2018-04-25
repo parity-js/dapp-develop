@@ -19,15 +19,9 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { AddressSelect, Form, Input, TypedInput, Checkbox, Dropdown } from '@parity/ui/lib';
+import { AddressSelect, Form, Input, TypedInput, Dropdown } from '@parity/ui/lib';
 
 import styles from '../executeContract.css';
-
-const CHECK_STYLE = {
-  position: 'absolute',
-  top: '38px',
-  left: '1em'
-};
 
 export default class DetailsStep extends Component {
   static propTypes = {

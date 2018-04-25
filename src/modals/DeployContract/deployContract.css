@@ -16,11 +16,11 @@
 */
 
 .funcparams {
-  padding-left: 3em;
+  
 }
 
 .parameters {
   p {
-    color: rgba(255, 255, 255, 0.498039);
+    color: rgba(0, 0, 0, .85);
   }
 }
