@@ -23,7 +23,7 @@ import { bindActionCreators } from 'redux';
 import styles from './addContract.css';
 
 import { newError } from '@parity/shared/lib/redux/actions';
-import { Button, Form, Input, InputAddress, Portal, RadioButtons } from '@parity/ui/lib';
+import { Button, Form, Input, InputAddress, InputChip, Portal, RadioButtons } from '@parity/ui/lib';
 import { AddIcon, CancelIcon, NextIcon, PrevIcon } from '@parity/ui/lib/Icons';
 
 import Store from './store';
@@ -158,7 +158,7 @@ class AddContract extends Component {
   }
 
   renderFields () {
-    const { abi, abiError, abiType, address, addressError, description, name, nameError } = this.store;
+    const { abi, abiError, abiType, address, addressError, description, name, nameError, tags } = this.store;
 
     return (
       <Form>
@@ -214,6 +214,23 @@ class AddContract extends Component {
           onSubmit={ this.onEditDescription }
           value={ description }
         />
+        <InputChip
+          addOnBlur
+          hint={
+            <FormattedMessage
+              id='addContract.description.tags.hint'
+              defaultMessage='Press <Enter> to add a tag'
+            />
+          }
+          label={
+            <FormattedMessage
+              id='addContract.description.tags.label'
+              defaultMessage='(optional) Tags'
+            />
+          }
+          onTokensChange={ this.onEditTags }
+          tokens={ tags.slice() }
+        />
         <Input
           error={ abiError }
           hint={
@@ -266,6 +283,10 @@ class AddContract extends Component {
 
   onEditName = (name) => {
     this.store.setName(name);
+  }
+
+  onEditTags = (tags) => {
+    this.store.setTags(tags);
   }
 
   onAdd = () => {

@@ -32,6 +32,7 @@ export default class Store {
   @observable name = '';
   @observable nameError = ERRORS.invalidName;
   @observable step = 0;
+  @observable tags = [];
 
   constructor (api, contracts) {
     this._api = api;
@@ -94,6 +95,10 @@ export default class Store {
     this.description = description;
   }
 
+  @action setTags = (tags) => {
+    this.tags = tags.slice();
+  }
+
   @action setName = (_name) => {
     const { name, nameError } = validateName(_name);
 
@@ -110,7 +115,8 @@ export default class Store {
       timestamp: Date.now(),
       abi: this.abiParsed,
       type: this.abiType.type,
-      description: this.description
+      description: this.description,
+      tags: this.tags.peek()
     };
 
     return Promise
