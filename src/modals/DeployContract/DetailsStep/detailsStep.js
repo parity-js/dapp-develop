@@ -19,7 +19,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { AddressSelect, Form, Input, Dropdown } from '@parity/ui/lib';
+import { AddressSelect, Form, Input, InputChip, Dropdown } from '@parity/ui/lib';
 import { validateAbi } from '@parity/shared/lib/util/validation';
 import { parseAbiType } from '@parity/shared/lib/util/abi';
 
@@ -38,6 +38,7 @@ export default class DetailsStep extends Component {
     onInputsChange: PropTypes.func.isRequired,
     onNameChange: PropTypes.func.isRequired,
     onParamsChange: PropTypes.func.isRequired,
+    onTagsChange: PropTypes.func.isRequired,
 
     abi: PropTypes.string,
     abiError: PropTypes.string,
@@ -51,7 +52,8 @@ export default class DetailsStep extends Component {
     fromAddressError: PropTypes.string,
     name: PropTypes.string,
     nameError: PropTypes.string,
-    readOnly: PropTypes.bool
+    readOnly: PropTypes.bool,
+    tags: PropTypes.array
   };
 
   static defaultProps = {
@@ -85,6 +87,7 @@ export default class DetailsStep extends Component {
       fromAddress, fromAddressError,
       name, nameError,
       description, descriptionError,
+      tags,
       abiError,
       code, codeError
     } = this.props;
@@ -129,6 +132,24 @@ export default class DetailsStep extends Component {
           }
           onChange={ this.onDescriptionChange }
           value={ description }
+        />
+
+        <InputChip
+          addOnBlur
+          hint={
+            <FormattedMessage
+              id='deployContract.details.tags.hint'
+              defaultMessage='Press <Enter> to add a tag'
+            />
+          }
+          label={
+            <FormattedMessage
+              id='deployContract.details.tags.label'
+              defaultMessage='Tags (optional)'
+            />
+          }
+          onTokensChange={ this.onTagsChange }
+          tokens={ tags }
         />
 
         <AddressSelect
@@ -333,6 +354,12 @@ export default class DetailsStep extends Component {
     const { onDescriptionChange } = this.props;
 
     onDescriptionChange(description);
+  }
+
+  onTagsChange = (tags) => {
+    const { onTagsChange } = this.props;
+
+    onTagsChange(tags);
   }
 
   onAmountChange = (event, value) => {

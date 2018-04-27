@@ -94,7 +94,8 @@ class DeployContract extends Component {
     params: [],
     paramsError: [],
     inputs: [],
-    step: 'CONTRACT_DETAILS'
+    step: 'CONTRACT_DETAILS',
+    tags: []
   };
 
   componentWillMount () {
@@ -309,6 +310,7 @@ class DeployContract extends Component {
             onCodeChange={ this.onCodeChange }
             onParamsChange={ this.onParamsChange }
             onInputsChange={ this.onInputsChange }
+            onTagsChange={ this.onTagsChange }
             readOnly={ readOnly }
           />
         );
@@ -406,6 +408,10 @@ class DeployContract extends Component {
     this.setState({ inputs }, this.estimateGas);
   }
 
+  onTagsChange = (tags) => {
+    this.setState({ tags });
+  }
+
   onAbiChange = (abi) => {
     const { api } = this.context;
 
@@ -429,7 +435,7 @@ class DeployContract extends Component {
   onDeployStart = () => {
     const { api } = this.context;
     const { source } = this.props;
-    const { abiParsed, amountValue, code, description, name, params, fromAddress } = this.state;
+    const { abiParsed, amountValue, code, description, name, params, tags, fromAddress } = this.state;
 
     const metadata = {
       abi: abiParsed,
@@ -438,7 +444,8 @@ class DeployContract extends Component {
       timestamp: Date.now(),
       name,
       description,
-      source
+      source,
+      tags
     };
 
     const options = this.gasStore.overrideTransaction({
