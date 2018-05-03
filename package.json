@@ -10,7 +10,7 @@
   "license": "GPL-3.0",
   "scripts": {
     "test": "echo 'Skipping tests'",
-    "build": "parity-react-app build",
+    "build": "CI=false parity-react-app build",
     "init": "parity-react-app init",
     "lint": "parity-react-app lint",
     "lint:css": "parity-react-app lint-css",
