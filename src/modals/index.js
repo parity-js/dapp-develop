@@ -1,4 +1,3 @@
-
 // Copyright 2015-2018 Parity Technologies (UK) Ltd.
 // This file is part of Parity.
 
@@ -15,12 +14,9 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-import Api from '@parity/api';
-
-const ethereumProvider = window.ethereum;
-
-if (!ethereumProvider) {
-  throw new Error('Unable to locate EthereumProvider, object not attached');
-}
-
-export default new Api(ethereumProvider);
+export AddContract from './AddContract';
+export DeployContract from './DeployContract';
+export EditMeta from './EditMeta';
+export ExecuteContract from './ExecuteContract';
+export LoadContract from './LoadContract';
+export SaveContract from './SaveContract';

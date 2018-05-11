@@ -1,4 +1,3 @@
-
 // Copyright 2015-2018 Parity Technologies (UK) Ltd.
 // This file is part of Parity.
 
@@ -15,12 +14,36 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-import Api from '@parity/api';
+import sinon from 'sinon';
 
-const ethereumProvider = window.ethereum;
+const ABI = '[{"constant":true,"inputs":[],"name":"totalDonated","outputs":[{"name":"","type":"uint256"}],"type":"function"}]';
 
-if (!ethereumProvider) {
-  throw new Error('Unable to locate EthereumProvider, object not attached');
+const CONTRACTS = {
+  '0x1234567890123456789012345678901234567890': {}
+};
+
+function createApi () {
+  return {
+    parity: {
+      setAccountMeta: sinon.stub().resolves(),
+      setAccountName: sinon.stub().resolves()
+    }
+  };
 }
 
-export default new Api(ethereumProvider);
+function createRedux () {
+  return {
+    dispatch: sinon.stub(),
+    subscribe: sinon.stub(),
+    getState: () => {
+      return {};
+    }
+  };
+}
+
+export {
+  ABI,
+  CONTRACTS,
+  createApi,
+  createRedux
+};

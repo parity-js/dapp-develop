@@ -1,0 +1,232 @@
+// Copyright 2015-2018 Parity Technologies (UK) Ltd.
+// This file is part of Parity.
+
+// Parity is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+
+// Parity is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with Parity.  If not, see <http://www.gnu.org/licenses/>.
+
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { uniq, isEqual } from 'lodash';
+import styles from './contracts.css';
+
+import { AddContract } from '~/modals';
+import { setVisibleAccounts } from '@parity/shared/lib/redux/providers/personalActions';
+import { Actionbar, ActionbarSearch, ActionbarSort, Button, Page } from '@parity/ui/lib';
+
+import List from '../Accounts/List';
+
+const META_SORT = [
+  {
+    key: 'timestamp',
+    label: (
+      <FormattedMessage
+        id='contracts.sortOrder.date'
+        defaultMessage='Date'
+      />
+    )
+  },
+  {
+    key: 'blockNumber:-1',
+    label: (
+      <FormattedMessage
+        id='contracts.sortOrder.minedBlock'
+        defaultMessage='Mined block'
+      />
+    )
+  }
+];
+
+class Contracts extends Component {
+  static contextTypes = {
+    api: PropTypes.object.isRequired
+  }
+
+  static propTypes = {
+    setVisibleAccounts: PropTypes.func.isRequired,
+
+    contracts: PropTypes.object,
+    hasContracts: PropTypes.bool
+  }
+
+  state = {
+    addContract: false,
+    sortOrder: 'blockNumber:-1',
+    searchValues: [],
+    searchTokens: []
+  }
+
+  componentWillMount () {
+    this.setVisibleAccounts();
+  }
+
+  componentWillReceiveProps (nextProps) {
+    const prevAddresses = Object.keys(this.props.contracts);
+    const nextAddresses = Object.keys(nextProps.contracts);
+
+    if (prevAddresses.length !== nextAddresses.length || !isEqual(prevAddresses.sort(), nextAddresses.sort())) {
+      this.setVisibleAccounts(nextProps);
+    }
+  }
+
+  componentWillUnmount () {
+    this.props.setVisibleAccounts([]);
+  }
+
+  setVisibleAccounts (props = this.props) {
+    const { contracts, setVisibleAccounts } = props;
+    const addresses = Object.keys(contracts);
+
+    setVisibleAccounts(addresses);
+  }
+
+  render () {
+    const { contracts, hasContracts } = this.props;
+    const { searchValues, sortOrder } = this.state;
+
+    return (
+      <div>
+        { this.renderActionbar() }
+        { this.renderAddContract() }
+        <Page className={ styles.page } >
+          <List
+            link='contracts'
+            search={ searchValues }
+            accounts={ contracts }
+            empty={ !hasContracts }
+            order={ sortOrder }
+            orderFallback='name'
+            handleAddSearchToken={ this.onAddSearchToken }
+          />
+        </Page>
+      </div>
+    );
+  }
+
+  renderSortButton () {
+    const { sortOrder } = this.state;
+
+    return (
+      <ActionbarSort
+        key='sortAccounts'
+        id='sortContracts'
+        order={ sortOrder }
+        metas={ META_SORT }
+        showDefault={ false }
+        onChange={ this.handleSortChange }
+      />
+    );
+  }
+
+  renderSearchButton () {
+    const onChange = (searchTokens, searchValues) => {
+      this.setState({ searchTokens, searchValues });
+    };
+
+    return (
+      <ActionbarSearch
+        key='searchContract'
+        tokens={ this.state.searchTokens }
+        onChange={ onChange }
+      />
+    );
+  }
+
+  renderActionbar () {
+    const buttons = [
+      <Button
+        key='addContract'
+        icon='add'
+        label={
+          <FormattedMessage
+            id='contracts.buttons.watch'
+            defaultMessage='Add'
+          />
+        }
+        onClick={ this.onAddContract }
+      />,
+      this.renderSearchButton(),
+      this.renderSortButton()
+    ];
+
+    return (
+      <Actionbar
+        title={
+          <FormattedMessage
+            id='contracts.title'
+            defaultMessage='Contracts'
+          />
+        }
+        buttons={ buttons }
+      />
+    );
+  }
+
+  renderAddContract () {
+    const { contracts } = this.props;
+    const { addContract } = this.state;
+
+    if (!addContract) {
+      return null;
+    }
+
+    return (
+      <AddContract
+        contracts={ contracts }
+        onClose={ this.onAddContractClose }
+      />
+    );
+  }
+
+  handleSortChange = (sortOrder) => {
+    this.setState({ sortOrder });
+  }
+
+  onAddSearchToken = (token) => {
+    const { searchTokens } = this.state;
+    const newSearchTokens = uniq([].concat(searchTokens, token));
+
+    this.setState({ searchTokens: newSearchTokens });
+  }
+
+  onAddContractClose = () => {
+    this.setState({ addContract: false });
+  }
+
+  onAddContract = () => {
+    this.setState({ addContract: true });
+  }
+}
+
+function mapStateToProps (state) {
+  const { contracts, hasContracts } = state.personal;
+
+  return {
+    contracts,
+    hasContracts
+  };
+}
+
+function mapDispatchToProps (dispatch) {
+  return bindActionCreators({
+    setVisibleAccounts
+  }, dispatch);
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Contracts);

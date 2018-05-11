@@ -1,0 +1,71 @@
+/* Copyright 2015-2018 Parity Technologies (UK) Ltd.
+/* This file is part of Parity.
+/*
+/* Parity is free software: you can redistribute it and/or modify
+/* it under the terms of the GNU General Public License as published by
+/* the Free Software Foundation, either version 3 of the License, or
+/* (at your option) any later version.
+/*
+/* Parity is distributed in the hope that it will be useful,
+/* but WITHOUT ANY WARRANTY; without even the implied warranty of
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/* GNU General Public License for more details.
+/*
+/* You should have received a copy of the GNU General Public License
+/* along with Parity.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+:root,
+:root body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300 !important;
+}
+
+:root * {
+  font-weight: 300 !important;
+}
+
+:root a,
+:root a:visited {
+  text-decoration: none;
+  cursor: pointer;
+  color: rgb(0, 151, 167); /* #f80 */
+}
+
+:root a:hover {
+  color: rgb(0, 174, 193);
+}
+
+:root .reset {
+  font-size: initial;
+  width: 100%;
+  height: 100%;
+}
+
+/* shame:on */
+
+/* Material-ui is changing input properties with inline styles. */
+
+/* because of that https://github.com/paritytech/eth-node-status-page is overriding all inputs with !important
+/* We want to keep it consistent and we use material ui, so we set the default color according to material ui */
+:root .reset input {
+  margin-top: 0;
+  color: rgba(0, 0, 0, 0.870588) !important;
+}
+
+:root .reset input[disabled] {
+  color: rgba(0, 0, 0, 0.298039) !important;
+}
+
+/* shame:off */
+
+:global(#parity-react-scripts--hmr-status) {
+  display: none;
+}

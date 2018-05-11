@@ -1,4 +1,3 @@
-
 // Copyright 2015-2018 Parity Technologies (UK) Ltd.
 // This file is part of Parity.
 
@@ -15,12 +14,20 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-import Api from '@parity/api';
+import { Contract, Contracts, DeployContract, WriteContract } from '~/views';
+import App from '~/app';
 
-const ethereumProvider = window.ethereum;
+const routes = [
+  {
+    path: '/',
+    component: App,
+    indexRoute: { component: Contracts },
+    childRoutes: [
+      { path: 'develop', component: WriteContract },
+      { path: 'deploy', component: DeployContract },
+      { path: 'contracts/:address', component: Contract }
+    ]
+  }
+];
 
-if (!ethereumProvider) {
-  throw new Error('Unable to locate EthereumProvider, object not attached');
-}
-
-export default new Api(ethereumProvider);
+export default routes;
