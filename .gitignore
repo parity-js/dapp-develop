@@ -1,9 +1,6 @@
 .build
 .happypack
 
-# Use yarn instead
-package-lock.json
-
 # Logs
 logs
 *.log
