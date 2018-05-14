@@ -28,7 +28,12 @@ echo "Bumping package version"
 
 npm --no-git-tag-version version
 npm version patch -m "[CI Skip] %s"
+
+echo "Pushing updated version to github.com/${TRAVIS_REPO_SLUG}.git"
+
 git push --quiet origin HEAD:refs/heads/$TRAVIS_BRANCH > /dev/null 2>&1
+
+echo "Determining current version"
 
 UTCDATE=`date -u "+%Y%m%d-%H%M%S"`
 PACKAGE_VERSION=$(cat package.json \
