@@ -51,6 +51,6 @@
     "semantic-ui-react": "^0.83.0",
     "solc": "github:ngotchac/solc-js",
     "webpack": "3.4.1",
-    "webpack-dev-server": "2.6.1"
+    "webpack-dev-server": "2.11.3"
   }
 }
