@@ -33,7 +33,7 @@
   "dependencies": {
     "@parity/api": "~2.1.24",
     "@parity/shared": "~3.0.1",
-    "@parity/ui": "~3.1.13",
+    "@parity/ui": "~3.1.15",
     "@parity/etherscan": "2.1.x",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
