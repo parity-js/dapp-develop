@@ -6232,11 +6232,12 @@ mobx-react@4.0.3:
   dependencies:
     hoist-non-react-statics "^1.2.0"
 
-mobx-react@^5.3.6:
-  version "5.3.6"
-  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-5.3.6.tgz#0bead0173aed7d12ace4981b53c28db4d61de9ef"
+mobx-react@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-5.4.0.tgz#25540c57a92b078d0955d08166fcc39c88b0f89e"
   dependencies:
     hoist-non-react-statics "^3.0.0"
+    react-is "^16.3.2"
     react-lifecycles-compat "^3.0.2"
 
 mobx@2.6.4:
