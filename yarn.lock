@@ -66,11 +66,11 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@parity/abi@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@parity/abi/-/abi-3.0.1.tgz#7cd2bdaab2a798ce3480a6630164cd1ce1ed6448"
+"@parity/abi@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@parity/abi/-/abi-3.0.4.tgz#7d60402b44df4e014a4d3dd7042b572bdddf23b8"
   dependencies:
-    bignumber.js "7.2.1"
+    bignumber.js "^8.0.1"
     js-sha3 "0.7.0"
     utf8 "^3.0.0"
 
@@ -100,19 +100,19 @@
     store "^2.0.12"
     websocket "^1.0.25"
 
-"@parity/api@~3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@parity/api/-/api-3.0.1.tgz#fa07c1b6357a1516318121b926d8236b0e3860d8"
+"@parity/api@~3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@parity/api/-/api-3.0.4.tgz#e979984239524783bc7478351e42bed39603d352"
   dependencies:
-    "@parity/abi" "^3.0.1"
-    bignumber.js "^7"
+    "@parity/abi" "^3.0.4"
+    bignumber.js "^8.0.1"
     blockies "0.0.2"
     es6-error "4.0.2"
     es6-promise "^4.1.1"
-    eventemitter3 "^2.0.2"
+    eventemitter3 "^3.1.0"
     isomorphic-fetch "^2.2.1"
     js-sha3 "0.5.5"
-    lodash "^4.17.4"
+    lodash "^4.17.11"
     store "^2.0.12"
     websocket "^1.0.25"
 
@@ -1393,11 +1393,7 @@ bignumber.js@4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-4.1.0.tgz#db6f14067c140bd46624815a7916c92d9b6c24b1"
 
-bignumber.js@7.2.1, bignumber.js@^7:
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-7.2.1.tgz#80c048759d826800807c4bfd521e50edbba57a5f"
-
-bignumber.js@8.0.1:
+bignumber.js@8.0.1, bignumber.js@^8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-8.0.1.tgz#5d419191370fb558c64e3e5f70d68e5947138832"
 
