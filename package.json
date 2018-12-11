@@ -31,7 +31,7 @@
     }
   },
   "dependencies": {
-    "@parity/api": "~3.0.6",
+    "@parity/api": "~3.0.8",
     "@parity/shared": "~3.0.2",
     "@parity/ui": "~3.1.18",
     "@parity/etherscan": "2.1.x",
