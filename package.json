@@ -42,7 +42,7 @@
     "mobx-react": "^5.4.3",
     "parity-react-app": "^0.14.0",
     "raw-loader": "^0.5.1",
-    "react": "^16.6.3",
+    "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
     "react-router-redux": "^4.0.8",
