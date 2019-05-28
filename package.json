@@ -1,7 +1,7 @@
 {
   "name": "@parity/dapp-develop",
   "description": "Dapp Develop",
-  "version": "1.0.50",
+  "version": "1.0.51",
   "main": "src/index.js",
   "author": "Parity Team <admin@parity.io>",
   "maintainers": [],
