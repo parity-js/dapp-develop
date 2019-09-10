@@ -47,7 +47,7 @@
     "react-redux": "^7.1.1",
     "react-router-redux": "^4.0.8",
     "react-tap-event-plugin": "^3.0.2",
-    "react-tooltip": "3.11.0",
+    "react-tooltip": "3.11.1",
     "semantic-ui-react": "^0.88.0",
     "solc": "github:ngotchac/solc-js",
     "webpack": "3.12.0",
