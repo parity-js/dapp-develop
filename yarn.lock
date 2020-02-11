@@ -8617,14 +8617,6 @@ react-tap-event-plugin@^3.0.2:
   dependencies:
     fbjs "^0.8.6"
 
-react-tooltip@3.11.2:
-  version "3.11.2"
-  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-3.11.2.tgz#78972910657d6184defdcdc9a0182c1e44e01ce6"
-  integrity sha512-7EJ7Cv7lgctw02j0hyp+PpJklIP3gyDbm4CvVQvq7U6zgZtuI+bFFnRzsQB1oTiHPkkhE2NU04EIkgBDiVNzxw==
-  dependencies:
-    classnames "^2.2.5"
-    prop-types "^15.6.0"
-
 react-tooltip@3.9.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-3.9.0.tgz#d874df922c3b34b2e547ec62ff8b2eef42017b51"
@@ -8632,6 +8624,13 @@ react-tooltip@3.9.0:
     classnames "^2.2.5"
     prop-types "^15.6.0"
     sanitize-html-react "^1.13.0"
+
+react-tooltip@4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-4.0.3.tgz#2c1f97bb8c4edec0c11e40d39e2c97b7c2bab72b"
+  integrity sha512-xEM+fr8tr/KJP5PZEOg/fc5bZ7ZkC658iMDgCq5DfTqHVyuIOOd5loyxQD0eAJiZ6jWdEd18owbRqd3stHtEDg==
+  dependencies:
+    prop-types "^15.6.0"
 
 react-transition-group@^2.5.0:
   version "2.5.0"
