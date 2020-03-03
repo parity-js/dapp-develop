@@ -43,7 +43,7 @@
     "parity-react-app": "^0.14.0",
     "raw-loader": "^0.5.1",
     "react": "^16.13.0",
-    "react-dom": "^16.12.0",
+    "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
     "react-router-redux": "^4.0.8",
     "react-tap-event-plugin": "^3.0.2",
