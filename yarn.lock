@@ -8624,12 +8624,12 @@ react-tooltip@3.9.0:
     prop-types "^15.6.0"
     sanitize-html-react "^1.13.0"
 
-react-tooltip@4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-4.0.3.tgz#2c1f97bb8c4edec0c11e40d39e2c97b7c2bab72b"
-  integrity sha512-xEM+fr8tr/KJP5PZEOg/fc5bZ7ZkC658iMDgCq5DfTqHVyuIOOd5loyxQD0eAJiZ6jWdEd18owbRqd3stHtEDg==
+react-tooltip@4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-4.0.5.tgz#6fd82144bba6f70f9ab3eec8fc28b20e8e62f650"
+  integrity sha512-LtSfsUQBl0rXued0VqF1tuS4ZmXGop5fMO6S1X1cr4GY+L5oPEY338hF7ERLAYYNFJgrgpC6/klZmYaB7rgmcA==
   dependencies:
-    prop-types "^15.6.0"
+    prop-types "^15.7.2"
 
 react-transition-group@^2.5.0:
   version "2.5.0"
