@@ -8624,10 +8624,10 @@ react-tooltip@3.9.0:
     prop-types "^15.6.0"
     sanitize-html-react "^1.13.0"
 
-react-tooltip@4.0.5:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-4.0.5.tgz#6fd82144bba6f70f9ab3eec8fc28b20e8e62f650"
-  integrity sha512-LtSfsUQBl0rXued0VqF1tuS4ZmXGop5fMO6S1X1cr4GY+L5oPEY338hF7ERLAYYNFJgrgpC6/klZmYaB7rgmcA==
+react-tooltip@4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-4.1.2.tgz#bc9f8620759518f6ef294198d082097e968d549c"
+  integrity sha512-AXQ5uumN/ZpPO6mlPrV52S1As1OOHhyp3pinWFEtTlpKojS8+CL5r/n0oiO8GR5hWqrvEONU34NEF01N2ODwqg==
   dependencies:
     prop-types "^15.7.2"
 
